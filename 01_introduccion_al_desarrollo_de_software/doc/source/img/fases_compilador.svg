@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="436.28928mm"
+   height="234.01514mm"
+   viewBox="0 0 436.28928 234.01514"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="fases_compilador.svg">
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker1633"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1631" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1563"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1561" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1495"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1493" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1433"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1431" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1387"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1385" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1110" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="863.7881"
+     inkscape:cy="521.6257"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     lock-margins="true"
+     fit-margin-top="5"
+     fit-margin-left="5"
+     fit-margin-right="5"
+     fit-margin-bottom="5"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-7.5227836,-11.15287)">
+    <path
+       id="rect833"
+       style="opacity:0.999;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.281267;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 20.725549,35.536943 h 40.006914 l 1.643068,1.70403 c 1.134474,1.13448 1.344186,1.40773 2.75848,2.79959 v 58.17896 c 0,0.0276 -0.0222,0.0498 -0.04977,0.0498 H 20.725549 c -0.02758,0 -0.04977,-0.0222 -0.04977,-0.0498 v -62.63282 c 0,-0.0275 0.0222,-0.0497 0.04977,-0.0497 z"
+       sodipodi:nodetypes="scccssssss" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.25012px;line-height:1.25;font-family:sans-serif;opacity:0.999;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.056253"
+       x="22.432335"
+       y="44.917671"
+       id="text838"><tspan
+         sodipodi:role="line"
+         id="tspan836"
+         x="22.432335"
+         y="45.739491"
+         style="stroke-width:0.056253">int num1 = 10;</tspan><tspan
+         sodipodi:role="line"
+         x="22.432335"
+         y="51.364792"
+         style="stroke-width:0.056253"
+         id="tspan840">int num2 = 20;</tspan><tspan
+         sodipodi:role="line"
+         x="22.432335"
+         y="54.177441"
+         style="stroke-width:0.056253"
+         id="tspan842" /><tspan
+         sodipodi:role="line"
+         x="22.432335"
+         y="59.802742"
+         style="stroke-width:0.056253"
+         id="tspan844">int resultado = num1 + num2;</tspan><tspan
+         sodipodi:role="line"
+         x="22.432335"
+         y="62.615391"
+         style="stroke-width:0.056253"
+         id="tspan846" /><tspan
+         sodipodi:role="line"
+         x="22.432335"
+         y="65.42804"
+         style="stroke-width:0.056253"
+         id="tspan848">printf(&quot;Resultado: %d\n&quot;, resultado);</tspan></text>
+    <path
+       id="path850"
+       style="opacity:0.999;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.281267;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 20.725549,106.41599 h 40.006914 l 1.643068,1.70403 c 1.134474,1.13448 1.344186,1.40773 2.75848,2.79959 v 58.17899 c 0,0.0275 -0.0222,0.0498 -0.04977,0.0498 H 20.725549 c -0.02758,0 -0.04977,-0.0222 -0.04977,-0.0498 v -62.63286 c 0,-0.0275 0.0222,-0.0497 0.04977,-0.0497 z"
+       sodipodi:nodetypes="scccssssss" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.25012px;line-height:1.25;font-family:sans-serif;opacity:0.999;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.056253"
+       x="24.860453"
+       y="115.7967"
+       id="text864"><tspan
+         sodipodi:role="line"
+         id="tspan852"
+         x="24.860453"
+         y="116.61852"
+         style="stroke-width:0.056253">int num1 = 10;</tspan><tspan
+         sodipodi:role="line"
+         x="24.860453"
+         y="122.24382"
+         style="stroke-width:0.056253"
+         id="tspan854">int num2 = 20;</tspan><tspan
+         sodipodi:role="line"
+         x="24.860453"
+         y="125.05647"
+         style="stroke-width:0.056253"
+         id="tspan856" /><tspan
+         sodipodi:role="line"
+         x="24.860453"
+         y="130.68176"
+         style="stroke-width:0.056253"
+         id="tspan858">int resultado = num1 - num2;</tspan><tspan
+         sodipodi:role="line"
+         x="24.860453"
+         y="133.49442"
+         style="stroke-width:0.056253"
+         id="tspan860" /><tspan
+         sodipodi:role="line"
+         x="24.860453"
+         y="139.11972"
+         style="stroke-width:0.056253"
+         id="tspan862">printf(&quot;Resta: %d\n&quot;, resultado);</tspan><tspan
+         sodipodi:role="line"
+         x="24.860453"
+         y="141.93237"
+         style="stroke-width:0.056253"
+         id="tspan866" /><tspan
+         sodipodi:role="line"
+         x="24.860453"
+         y="144.74503"
+         style="stroke-width:0.056253"
+         id="tspan868">return 0;</tspan></text>
+    <path
+       id="path870"
+       style="opacity:0.999;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.281267;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 20.725549,177.29505 h 40.006914 l 1.643068,1.70404 c 1.134474,1.13448 1.344186,1.40773 2.75848,2.79959 v 58.17899 c 0,0.0276 -0.0222,0.0497 -0.04977,0.0497 H 20.725549 c -0.02758,0 -0.04977,-0.0222 -0.04977,-0.0497 v -62.63285 c 0,-0.0276 0.0222,-0.0497 0.04977,-0.0497 z"
+       sodipodi:nodetypes="scccssssss" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.25012px;line-height:1.25;font-family:sans-serif;opacity:0.999;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.056253"
+       x="26.005283"
+       y="186.67574"
+       id="text888"><tspan
+         sodipodi:role="line"
+         x="26.005283"
+         y="187.49756"
+         style="stroke-width:0.056253"
+         id="tspan886">int main(int argc, char **argv)</tspan><tspan
+         sodipodi:role="line"
+         x="26.005283"
+         y="193.12286"
+         style="stroke-width:0.056253"
+         id="tspan925">{</tspan><tspan
+         sodipodi:role="line"
+         x="26.005283"
+         y="198.74815"
+         style="stroke-width:0.056253"
+         id="tspan931">    sumar();</tspan><tspan
+         sodipodi:role="line"
+         x="26.005283"
+         y="204.37346"
+         style="stroke-width:0.056253"
+         id="tspan933">    restar();</tspan><tspan
+         sodipodi:role="line"
+         x="26.005283"
+         y="209.99875"
+         style="stroke-width:0.056253"
+         id="tspan927">    return 0;</tspan><tspan
+         sodipodi:role="line"
+         x="26.005283"
+         y="212.8114"
+         style="stroke-width:0.056253"
+         id="tspan929">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.87972px;line-height:1.25;font-family:sans-serif;opacity:0.999;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196994"
+       x="11.937961"
+       y="22.55899"
+       id="text937"><tspan
+         sodipodi:role="line"
+         id="tspan935"
+         x="11.937961"
+         y="22.55899"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono Bold';stroke-width:0.196994">Código fuente</tspan></text>
+    <path
+       id="path939"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.281267;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 170.33234,35.536943 h 40.00692 l 1.64307,1.70403 c 1.13447,1.13448 1.34418,1.40773 2.75847,2.79959 v 58.17896 c 0,0.0276 -0.0222,0.0498 -0.0497,0.0498 h -44.3587 c -0.0275,0 -0.0497,-0.0222 -0.0497,-0.0498 v -62.63282 c 0,-0.0275 0.0222,-0.0497 0.0497,-0.0497 z"
+       sodipodi:nodetypes="scccssssss" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.25012px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.056253"
+       x="172.03922"
+       y="44.917671"
+       id="text953"><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="45.739491"
+         style="stroke-width:0.056253"
+         id="tspan951">0011 1100 0110 000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="48.552143"
+         style="stroke-width:0.056253"
+         id="tspan1015" /><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="54.177441"
+         style="stroke-width:0.056253"
+         id="tspan1017">1101 0100 1000 0011</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="59.802742"
+         style="stroke-width:0.056253"
+         id="tspan1021">0011 0000 0000 0000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="65.42804"
+         style="stroke-width:0.056253"
+         id="tspan1029">1110 1111 0110 0001</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="71.053345"
+         style="stroke-width:0.056253"
+         id="tspan1035">0011 1100 0110 000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="73.86599"
+         style="stroke-width:0.056253"
+         id="tspan1037"></tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="79.491295"
+         style="stroke-width:0.056253"
+         id="tspan1039">1101 0100 1000 0011</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="85.116592"
+         style="stroke-width:0.056253"
+         id="tspan1041">0011 0000 0000 0000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="87.929237"
+         style="stroke-width:0.056253"
+         id="tspan1043">1110 1111 0110 0001</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.87972px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196994"
+       x="161.57175"
+       y="22.55899"
+       id="text993"><tspan
+         sodipodi:role="line"
+         id="tspan991"
+         x="161.57175"
+         y="22.55899"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono Bold';stroke-width:0.196994">Código objeto</tspan></text>
+    <path
+       id="path1045"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.281267;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 170.33234,106.41599 h 40.00692 l 1.64307,1.70403 c 1.13447,1.13448 1.34418,1.40773 2.75847,2.79959 v 58.17899 c 0,0.0275 -0.0222,0.0498 -0.0497,0.0498 h -44.3587 c -0.0275,0 -0.0497,-0.0222 -0.0497,-0.0498 v -62.63286 c 0,-0.0275 0.0222,-0.0497 0.0497,-0.0497 z"
+       sodipodi:nodetypes="scccssssss" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.25012px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.056253"
+       x="172.03922"
+       y="115.7967"
+       id="text1067"><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="116.61852"
+         style="stroke-width:0.056253"
+         id="tspan1047">0011 1100 0110 000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="119.43117"
+         style="stroke-width:0.056253"
+         id="tspan1049" /><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="125.05647"
+         style="stroke-width:0.056253"
+         id="tspan1051">1101 0100 1000 0011</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="130.68176"
+         style="stroke-width:0.056253"
+         id="tspan1053">0011 0000 0000 0000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="136.30707"
+         style="stroke-width:0.056253"
+         id="tspan1055">1110 1111 0110 0001</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="141.93237"
+         style="stroke-width:0.056253"
+         id="tspan1057">0011 1100 0110 000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="144.74503"
+         style="stroke-width:0.056253"
+         id="tspan1059"></tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="150.37032"
+         style="stroke-width:0.056253"
+         id="tspan1061">1101 0100 1000 0011</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="155.99562"
+         style="stroke-width:0.056253"
+         id="tspan1063">0011 0000 0000 0000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="158.80827"
+         style="stroke-width:0.056253"
+         id="tspan1065">1110 1111 0110 0001</tspan></text>
+    <path
+       id="path1069"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.281267;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 170.33234,177.29505 h 40.00692 l 1.64307,1.70404 c 1.13447,1.13448 1.34418,1.40773 2.75847,2.79959 v 58.17899 c 0,0.0276 -0.0222,0.0497 -0.0497,0.0497 h -44.3587 c -0.0275,0 -0.0497,-0.0222 -0.0497,-0.0497 v -62.63285 c 0,-0.0276 0.0222,-0.0497 0.0497,-0.0497 z"
+       sodipodi:nodetypes="scccssssss" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.25012px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.056253"
+       x="172.03922"
+       y="186.67574"
+       id="text1091"><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="187.49756"
+         style="stroke-width:0.056253"
+         id="tspan1071">0011 1100 0110 000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="190.31021"
+         style="stroke-width:0.056253"
+         id="tspan1073" /><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="195.9355"
+         style="stroke-width:0.056253"
+         id="tspan1075">1101 0100 1000 0011</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="201.56081"
+         style="stroke-width:0.056253"
+         id="tspan1077">0011 0000 0000 0000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="207.18611"
+         style="stroke-width:0.056253"
+         id="tspan1079">1110 1111 0110 0001</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="212.8114"
+         style="stroke-width:0.056253"
+         id="tspan1081">0011 1100 0110 000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="215.62405"
+         style="stroke-width:0.056253"
+         id="tspan1083"></tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="221.24936"
+         style="stroke-width:0.056253"
+         id="tspan1085">1101 0100 1000 0011</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="226.87465"
+         style="stroke-width:0.056253"
+         id="tspan1087">0011 0000 0000 0000</tspan><tspan
+         sodipodi:role="line"
+         x="172.03922"
+         y="229.6873"
+         style="stroke-width:0.056253"
+         id="tspan1089">1110 1111 0110 0001</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.81267;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       d="M 76.837322,66.838453 H 161.66664"
+       id="path1093"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.81267;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1387)"
+       d="M 80.246785,139.96764 H 161.66664"
+       id="path1383"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.81267;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1433)"
+       d="M 81.168401,215.34697 H 161.66664"
+       id="path1429"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.83899px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.220976"
+       x="94.529488"
+       y="46.503929"
+       id="text1479"><tspan
+         sodipodi:role="line"
+         id="tspan1477"
+         x="94.529488"
+         y="46.503929"
+         style="stroke-width:0.220976">Traducción</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.87972px;line-height:1.25;font-family:sans-serif;opacity:0.999;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196994"
+       x="311.20523"
+       y="22.55899"
+       id="text1483"><tspan
+         sodipodi:role="line"
+         id="tspan1481"
+         x="311.20523"
+         y="22.55899"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Bitstream Vera Sans Mono';-inkscape-font-specification:'Bitstream Vera Sans Mono Bold';stroke-width:0.196994">Código ejecutable o máquina</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.81267;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1495)"
+       d="M 229.8977,69.456153 335.26173,128.26995"
+       id="path1491"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.81267;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1563)"
+       d="m 231.91038,139.96764 100.70637,0.49544"
+       id="path1559"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.81267;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker1633)"
+       d="M 230.03093,214.96184 330.90762,153.52703"
+       id="path1629"
+       sodipodi:nodetypes="cc" />
+    <path
+       id="path1701"
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.281267;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 347.41746,106.41599 h 40.00692 l 1.64306,1.70403 c 1.13448,1.13448 1.34419,1.40773 2.75848,2.79959 v 58.17899 c 0,0.0275 -0.0222,0.0498 -0.0497,0.0498 h -44.35871 c -0.0276,0 -0.0497,-0.0222 -0.0497,-0.0498 v -62.63286 c 0,-0.0275 0.0222,-0.0497 0.0497,-0.0497 z"
+       sodipodi:nodetypes="scccssssss" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.25012px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.056253"
+       x="349.12424"
+       y="115.7967"
+       id="text1723"><tspan
+         sodipodi:role="line"
+         x="349.12424"
+         y="116.61852"
+         style="stroke-width:0.056253"
+         id="tspan1703">0011 1100 0110 000</tspan><tspan
+         sodipodi:role="line"
+         x="349.12424"
+         y="119.43117"
+         style="stroke-width:0.056253"
+         id="tspan1705" /><tspan
+         sodipodi:role="line"
+         x="349.12424"
+         y="125.05647"
+         style="stroke-width:0.056253"
+         id="tspan1707">1101 0100 1000 0011</tspan><tspan
+         sodipodi:role="line"
+         x="349.12424"
+         y="130.68176"
+         style="stroke-width:0.056253"
+         id="tspan1709">0011 0000 0000 0000</tspan><tspan
+         sodipodi:role="line"
+         x="349.12424"
+         y="136.30707"
+         style="stroke-width:0.056253"
+         id="tspan1711">1110 1111 0110 0001</tspan><tspan
+         sodipodi:role="line"
+         x="349.12424"
+         y="141.93237"
+         style="stroke-width:0.056253"
+         id="tspan1713">0011 1100 0110 000</tspan><tspan
+         sodipodi:role="line"
+         x="349.12424"
+         y="144.74503"
+         style="stroke-width:0.056253"
+         id="tspan1715"></tspan><tspan
+         sodipodi:role="line"
+         x="349.12424"
+         y="150.37032"
+         style="stroke-width:0.056253"
+         id="tspan1717">1101 0100 1000 0011</tspan><tspan
+         sodipodi:role="line"
+         x="349.12424"
+         y="155.99562"
+         style="stroke-width:0.056253"
+         id="tspan1719">0011 0000 0000 0000</tspan><tspan
+         sodipodi:role="line"
+         x="349.12424"
+         y="158.80827"
+         style="stroke-width:0.056253"
+         id="tspan1721">1110 1111 0110 0001</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.77428px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.219359"
+       x="233.37883"
+       y="48.366508"
+       id="text1745"><tspan
+         sodipodi:role="line"
+         id="tspan1743"
+         x="233.37883"
+         y="48.366508"
+         style="stroke-width:0.219359">Linkado (linker)</tspan></text>
+  </g>
+</svg>
