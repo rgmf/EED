@@ -1,0 +1,83 @@
+En la Arquitectura von Neumann se describen los siguientes componentes. {
+~Sistema Operativo, Memoria y CPU
+~Unidad Aritmético-Lógica (ALU), Unidad de Control y Registros
+=CPU, memoria y unidad de entrada/salida
+~Hardware y software
+}
+
+Dentro de una CPU encontramos las siguientes unidades funcionales. {
+~Memoria, Unidad de Control y ALU
+=Registros, Unidad de Control y ALU
+~ALU y Registros
+~Memoria, Registros, Contador de Programa y Registro de Instrucciones
+}
+
+¿Dónde se cargan los programas a ser ejecutados? {
+=En la memoria
+~En los registros de la CPU
+~En el disco duro
+~En el Sistema Operativo
+}
+
+¿Quién ejecuta los programas? {
+~El Sistema Operativo
+=La CPU
+~La memoria
+~Depende de si la CPU es x86, MIPS o ARM
+}
+
+Si se tiene que hacer una suma, a nivel hardware, ¿qué unidad funcional la realizará? {
+~Memoria
+~Sistema operativo
+~El programa
+=La ALU (Unidad Aritmético-Lógica)
+}
+
+¿Quién gestiona la carga de los programas de usuario (aplicaciones) en la memoria para ser ejecutados? {
+=El Sistema Operativo
+~La CPU
+~La memoria
+~Depende de si la CPU es x86, MIPS o ARM
+}
+
+¿Qué software tiene acceso al hardware del ordenador? {
+~El sistema operativo y las aplicaciones
+~Cualquier programa en ejecución
+~La CPU
+=El sistema operativo
+}
+
+¿Cuál fue la evolución histórica de los lenguajes de programación (de más antiguo a más actual)? {
+=Lengua máquina, lenguaje ensamblador y lenguajes de alto nivel
+~Lenguaje ensamblador, lenguaje máquina y lenguajes de alto nivel
+~Lenguajes de alto nivel, lenguaje ensamblador y lenguaje máquina
+~Lenguaje ensamblador, lenguaje máquina y lenguajes de alto nivel
+}
+
+¿Qué lenguaje o lenguajes puedes usar para escribir programas que puedan ser ejecutados directamente por la CPU, sin traducción? {
+~Lenguaje ensamblador
+~Lenguaje ensamblador o lenguaje máquina
+~Lenguaje en alto nivel
+=Lenguaje máquina
+}
+
+¿En qué lenguaje ha sido escrita la siguiente instrucción\: 00011 00011 01000 00000 00001 000100? {
+~Lenguaje ensamblador
+=Lenguaje máquina
+~Lenguaje en alto nivel
+~CPU
+}
+
+¿En qué lenguaje ha sido escrita la siguiente instrucción\: MOVL $10, %ebx? {
+=Lenguaje ensamblador
+~Lenguaje máquina
+~Lenguaje en alto nivel
+~CPU
+}
+
+¿En qué lenguaje ha sido escrita la siguiente instrucción\: int num1 \= 10;? {
+~Lenguaje ensamblador
+~Lenguaje máquina
+=Lenguaje en alto nivel
+~CPU
+}
