@@ -322,6 +322,22 @@ Git es un software de gestión de versiones muy utilizado en el mundo del desarr
 </pre></div>
 </div>
 </section>
+<section id="paso-9-ver-el-historial-de-cambios-log">
+<h2>Paso 9: ver el historial de cambios (log)<a class="headerlink" href="#paso-9-ver-el-historial-de-cambios-log" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Por último, otro comando básico de Git es el que nos permite ver el historial de cambios, es decir, el histórico de instantáneas o <em>commits</em> que hemos hecho. Ejecuta el comando siguiente:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git log
+</pre></div>
+</div>
+<p>Y verás que solo hay un commit, puedes ver quién lo hizo, a qué hora, qué día, etc:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit c7afc494c637463732d56711e9cc0da5bd274127 (HEAD -&gt; main)</span>
+<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
+<span class="go">Date:   Thu Sep 22 17:44:35 2022 +0200</span>
+
+<span class="go">    He añadido un fichero README a mi proyecto.</span>
+</pre></div>
+</div>
+<p>Fíjate además en un dato muy importante, cada <em>commit</em> se lista con su suma de comprobación SHA-1, un código único para identificar cada <em>commit</em>. En este caso dicha suma de comprobación SHA-1 es <cite>c7afc494c637463732d56711e9cc0da5bd274127</cite>. En tu caso será diferente.</p>
+</section>
 </section>
 
         </article>
@@ -381,6 +397,7 @@ Git es un software de gestión de versiones muy utilizado en el mundo del desarr
 <li><a class="reference internal" href="#paso-6-ver-el-estado-del-repositorio-status">Paso 6: ver el estado del repositorio (status)</a></li>
 <li><a class="reference internal" href="#paso-7-confirmar-cambios-commit">Paso 7: confirmar cambios (commit)</a></li>
 <li><a class="reference internal" href="#paso-8-ver-estado-del-proyecto-status">Paso 8: ver estado del proyecto (status)</a></li>
+<li><a class="reference internal" href="#paso-9-ver-el-historial-de-cambios-log">Paso 9: ver el historial de cambios (log)</a></li>
 </ul>
 </li>
 </ul>

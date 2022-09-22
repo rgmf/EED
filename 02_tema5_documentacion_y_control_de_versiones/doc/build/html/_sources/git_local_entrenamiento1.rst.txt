@@ -154,3 +154,23 @@ Y verás que el repositorio está *limpio*, no hay nada nuevo:
 
     En la rama main
     nada para hacer commit, el árbol de trabajo está limpio
+
+Paso 9: ver el historial de cambios (log)
+=========================================
+Por último, otro comando básico de Git es el que nos permite ver el historial de cambios, es decir, el histórico de instantáneas o *commits* que hemos hecho. Ejecuta el comando siguiente:
+
+.. code-block:: console
+
+    $ git log
+
+Y verás que solo hay un commit, puedes ver quién lo hizo, a qué hora, qué día, etc:
+
+.. code-block:: console
+
+    commit c7afc494c637463732d56711e9cc0da5bd274127 (HEAD -> main)
+    Author: Román Martínez <rgmf@riseup.net>
+    Date:   Thu Sep 22 17:44:35 2022 +0200
+
+        He añadido un fichero README a mi proyecto.
+
+Fíjate además en un dato muy importante, cada *commit* se lista con su suma de comprobación SHA-1, un código único para identificar cada *commit*. En este caso dicha suma de comprobación SHA-1 es `c7afc494c637463732d56711e9cc0da5bd274127`. En tu caso será diferente.
