@@ -1,0 +1,46 @@
+\selectlanguage *{spanish}
+\contentsline {chapter}{\numberline {1}El ordenador: una máquina programable}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Arquitectura von Neumann}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Unidad de procesamiento}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Memoria principal}{3}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Unidad de Entrada/Salida}{3}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Software y clasificación del software}{3}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Relación software\sphinxhyphen {}hardware}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Sistemas operativos}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Aplicaciones}{6}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Lenguajes de programación: evolución histórica}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Lenguaje máquina}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Lenguaje ensamblador}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Lenguaje de alto nivel}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}En resumen}{10}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Práctica 1: Introducción al desarrollo de software y lenguajes de programación}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Criterios de evaluación}{12}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Lenguajes de alto nivel: clasificación}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Código espagueti: paradigma a evitar}{13}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Programación estructurada}{14}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Programación modular}{14}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Programación orientada a objetos}{15}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Fases en la obtención del código}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Código fuente, objeto y ejecutable}{17}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Código fuente}{17}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Código objeto}{19}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Código ejecutable o máquina}{19}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Traductores de código}{23}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Compiladores: proceso de traducción}{23}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Código intermedio y máquinas virtuales}{24}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Laboratorio 1: generación de código máquina}{27}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Paso 1: escribir el programa}{27}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Paso 2: genera el código ensamblador}{28}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Paso 3: genera el código objeto}{28}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Paso 4: inspeccionar el código objeto}{28}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Paso 5: generar el código máquina ejecutable}{28}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Paso 6: ejecuta el programa}{29}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Entrega}{29}{section.7.7}%
+\contentsline {section}{\numberline {7.8}Criterios de evaluación}{29}{section.7.8}%
+\contentsline {chapter}{\numberline {8}Laboratorio 2: generación de bytecode}{31}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Paso 1: escribir el programa}{31}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Paso 2: compilar programa en Java}{31}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Paso 3: análisis del bytecode}{32}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Paso 4: visualizar el código máquina}{32}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Entrega}{32}{section.8.5}%
+\contentsline {section}{\numberline {8.6}Criterios de evaluación}{33}{section.8.6}%

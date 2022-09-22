@@ -1,0 +1,670 @@
+<!doctype html>
+<html class="no-js" lang="es">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Laboratorio 1: generación de código máquina" href="lab1.html" /><link rel="prev" title="Lenguajes de alto nivel: clasificación" href="lenguajes_alto_nivel_clasificacion.html" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.04.1"/>
+        <title>Fases en la obtención del código - Introducción al desarrollo de software</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #4a86cf;
+  --color-brand-content: #4a86cf;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">Introducción al desarrollo de software</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">Introducción al desarrollo de software</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Búsqueda name="q" aria-label="Búsqueda">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="software_hardware.html">El ordenador: una máquina programable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relacion_sw_hw.html">Relación software-hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lenguajes_programacion_evolucion_historica.html">Lenguajes de programación: evolución histórica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practica1.html">Práctica 1: Introducción al desarrollo de software y lenguajes de programación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lenguajes_alto_nivel_clasificacion.html">Lenguajes de alto nivel: clasificación</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Fases en la obtención del código</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab1.html">Laboratorio 1: generación de código máquina</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lab2.html">Laboratorio 2: generación de bytecode</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="fases-en-la-obtencion-del-codigo">
+<h1>Fases en la obtención del código<a class="headerlink" href="#fases-en-la-obtencion-del-codigo" title="Enlazar permanentemente con este título">#</a></h1>
+<p>Como ya sabes los programas escritos usando un lenguaje de alto nivel necesitan ser traducidos a lenguaje máquina. ¿Cómo se obtiene el código máquina o ejecutable? Es lo que vas a aprender en este apartado.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para ilustrar los ejemplos voy a usar el lenguaje de programación C.</p>
+</div>
+<section id="codigo-fuente-objeto-y-ejecutable">
+<h2>Código fuente, objeto y ejecutable<a class="headerlink" href="#codigo-fuente-objeto-y-ejecutable" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Antes tienes que saber que existen tres tipos de código: código <strong>fuente</strong>, código <strong>objeto</strong> y código <strong>ejecutable o máquina</strong>.</p>
+<section id="codigo-fuente">
+<h3>Código fuente<a class="headerlink" href="#codigo-fuente" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Se trata de los ficheros con el <strong>código escrito en alto nivel</strong> del lenguaje de programación escogido para la programación. También se denomina código fuente a los programas escritos en <strong>ensamblador</strong>. Un programa puede estar escrito en uno o varios ficheros.</p>
+<p>A continuación te muestro el código fuente de un programa escrito en C y su equivalente en ensamblador. Se trata de un programa que suma dos números y muestra el resultado por pantalla.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-Q8OzZGlnbyBmdWVudGUgZW4gQw==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-Q8OzZGlnbyBmdWVudGUgZW4gQw==" name="Q8OzZGlnbyBmdWVudGUgZW4gQw==" role="tab" tabindex="0">Código fuente en C</button><button aria-controls="panel-0-Q8OzZGlnbyBmdWVudGUgZW4gZW5zYW1ibGFkb3I=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Q8OzZGlnbyBmdWVudGUgZW4gZW5zYW1ibGFkb3I=" name="Q8OzZGlnbyBmdWVudGUgZW4gZW5zYW1ibGFkb3I=" role="tab" tabindex="-1">Código fuente en ensamblador</button></div><div aria-labelledby="tab-0-Q8OzZGlnbyBmdWVudGUgZW4gQw==" class="sphinx-tabs-panel group-tab" id="panel-0-Q8OzZGlnbyBmdWVudGUgZW4gQw==" name="Q8OzZGlnbyBmdWVudGUgZW4gQw==" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Programa escrito en C que suma dos números y muestra el resultado por pantalla</span><a class="headerlink" href="#id1" title="Enlace permanente a este código fuente">#</a></div>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="n">resultado</span><span class="p">;</span>
+
+    <span class="n">num1</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+    <span class="n">num2</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+    <span class="n">resultado</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Resultado de sumar %d y %d = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="n">resultado</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div><div aria-labelledby="tab-0-Q8OzZGlnbyBmdWVudGUgZW4gZW5zYW1ibGFkb3I=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Q8OzZGlnbyBmdWVudGUgZW4gZW5zYW1ibGFkb3I=" name="Q8OzZGlnbyBmdWVudGUgZW4gZW5zYW1ibGFkb3I=" role="tabpanel" tabindex="0"><div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Programa escrito en ensamblador que suma dos números y muestra el resultado por pantalla</span><a class="headerlink" href="#id2" title="Enlace permanente a este código fuente">#</a></div>
+<div class="highlight-asm notranslate"><div class="highlight"><pre><span></span>    <span class="na">.file</span>   <span class="s">&quot;main.c&quot;</span>
+    <span class="na">.text</span>
+    <span class="na">.section</span>    <span class="no">.rodata</span>
+    <span class="na">.align</span> <span class="mi">8</span>
+<span class="nl">.LC0:</span>
+    <span class="na">.string</span> <span class="s">&quot;Resultado de sumar %d y %d = %d\n&quot;</span>
+    <span class="na">.text</span>
+    <span class="na">.globl</span>  <span class="no">main</span>
+    <span class="na">.type</span>   <span class="no">main</span><span class="p">,</span> <span class="na">@function</span>
+<span class="nl">main:</span>
+<span class="nl">.LFB0:</span>
+    <span class="na">.cfi_startproc</span>
+    <span class="nf">pushq</span>   <span class="nv">%rbp</span>
+    <span class="na">.cfi_def_cfa_offset</span> <span class="mi">16</span>
+    <span class="na">.cfi_offset</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">-16</span>
+    <span class="nf">movq</span>    <span class="nv">%rsp</span><span class="p">,</span> <span class="nv">%rbp</span>
+    <span class="na">.cfi_def_cfa_register</span> <span class="mi">6</span>
+    <span class="nf">subq</span>    <span class="no">$32</span><span class="p">,</span> <span class="nv">%rsp</span>
+    <span class="nf">movl</span>    <span class="nv">%edi</span><span class="p">,</span> <span class="mi">-20</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">)</span>
+    <span class="nf">movq</span>    <span class="nv">%rsi</span><span class="p">,</span> <span class="mi">-32</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">)</span>
+    <span class="nf">movl</span>    <span class="no">$15</span><span class="p">,</span> <span class="mi">-4</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">)</span>
+    <span class="nf">movl</span>    <span class="no">$20</span><span class="p">,</span> <span class="mi">-8</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">)</span>
+    <span class="nf">movl</span>    <span class="mi">-4</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">),</span> <span class="nv">%edx</span>
+    <span class="nf">movl</span>    <span class="mi">-8</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">),</span> <span class="nv">%eax</span>
+    <span class="nf">addl</span>    <span class="nv">%edx</span><span class="p">,</span> <span class="nv">%eax</span>
+    <span class="nf">movl</span>    <span class="nv">%eax</span><span class="p">,</span> <span class="mi">-12</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">)</span>
+    <span class="nf">movl</span>    <span class="mi">-12</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">),</span> <span class="nv">%ecx</span>
+    <span class="nf">movl</span>    <span class="mi">-8</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">),</span> <span class="nv">%edx</span>
+    <span class="nf">movl</span>    <span class="mi">-4</span><span class="p">(</span><span class="nv">%rbp</span><span class="p">),</span> <span class="nv">%eax</span>
+    <span class="nf">movl</span>    <span class="nv">%eax</span><span class="p">,</span> <span class="nv">%esi</span>
+    <span class="nf">leaq</span>    <span class="no">.LC0</span><span class="p">(</span><span class="nv">%rip</span><span class="p">),</span> <span class="nv">%rdi</span>
+    <span class="nf">movl</span>    <span class="no">$0</span><span class="p">,</span> <span class="nv">%eax</span>
+    <span class="nf">call</span>    <span class="no">printf@PLT</span>
+    <span class="nf">movl</span>    <span class="no">$0</span><span class="p">,</span> <span class="nv">%eax</span>
+    <span class="nf">leave</span>
+    <span class="na">.cfi_def_cfa</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span>
+    <span class="nf">ret</span>
+    <span class="na">.cfi_endproc</span>
+<span class="nl">.LFE0:</span>
+    <span class="na">.size</span>   <span class="no">main</span><span class="p">,</span> <span class="no">.-main</span>
+    <span class="na">.ident</span>  <span class="s">&quot;GCC: (Debian 10.2.1-6) 10.2.1 20210110&quot;</span>
+    <span class="na">.section</span>        <span class="no">.note.GNU-stack</span><span class="p">,</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="na">@progbits</span>
+</pre></div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="codigo-objeto">
+<h3>Código objeto<a class="headerlink" href="#codigo-objeto" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Es el <strong>código binario resultante de traducir cada fichero fuente</strong>. Este código no es inteligible por el ser humano pero tampoco está listo para ser ejecutado por la CPU.</p>
+<p>Aquí te muestro el código <em>desensamblado</em> en hexadecimal, donde se indican las direcciones de la memoria virtual donde se cargará el programa y las instrucciones, también en hexadecimal.</p>
+<p>Por cuestiones de claridad, a la derecha tienes el código ensamblador equivalente.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Código objeto del programa anterior desensamblado (a la derecha tienes el código en ensamblador)</span><a class="headerlink" href="#id3" title="Enlace permanente a este código fuente">#</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0000000000000000 &lt;main&gt;:
+0:  55                      push   %rbp
+1:  48 89 e5                mov    %rsp,%rbp
+4:  48 83 ec 20             sub    $0x20,%rsp
+8:  89 7d ec                mov    %edi,-0x14(%rbp)
+b:  48 89 75 e0             mov    %rsi,-0x20(%rbp)
+f:  c7 45 fc 0f 00 00 00    movl   $0xf,-0x4(%rbp)
+16: c7 45 f8 14 00 00 00    movl   $0x14,-0x8(%rbp)
+1d: 8b 55 fc                mov    -0x4(%rbp),%edx
+20: 8b 45 f8                mov    -0x8(%rbp),%eax
+23: 01 d0                   add    %edx,%eax
+25: 89 45 f4                mov    %eax,-0xc(%rbp)
+28: 8b 4d f4                mov    -0xc(%rbp),%ecx
+2b: 8b 55 f8                mov    -0x8(%rbp),%edx
+2e: 8b 45 fc                mov    -0x4(%rbp),%eax
+31: 89 c6                   mov    %eax,%esi
+33: 48 8d 3d 00 00 00 00    lea    0x0(%rip),%rdi        # 3a &lt;main+0x3a&gt;
+3a: b8 00 00 00 00          mov    $0x0,%eax
+3f: e8 00 00 00 00          callq  44 &lt;main+0x44&gt;
+44: b8 00 00 00 00          mov    $0x0,%eax
+49: c9                      leaveq
+4a: c3                      retq
+</pre></div>
+</div>
+</div>
+</section>
+<section id="codigo-ejecutable-o-maquina">
+<h3>Código ejecutable o máquina<a class="headerlink" href="#codigo-ejecutable-o-maquina" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Es el código binario resultante de enlazar los archivos con el código objeto y ciertas rutinas y bibliotecas necesarias.</p>
+<p>Siguiendo con el ejemplo anterior, aquí te muestro el código ejecutable <em>desensamblado</em>. Como ves es bastante más largo que el código objeto anterior porque se han añadido ciertas rutinas y bibliotecas necesarias, todo en un mismo fichero.</p>
+<p>Por cuestiones de claridad, aquí también te muestro a la derecha el código ensamblador equivalente.</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Código ejecutable o máquina del programa anterior (a la derecha se muestra el código ensamblador equivalente)</span><a class="headerlink" href="#id4" title="Enlace permanente a este código fuente">#</a></div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0000000000001000 &lt;_init&gt;:
+    1000:   48 83 ec 08             sub    $0x8,%rsp
+    1004:   48 8b 05 dd 2f 00 00    mov    0x2fdd(%rip),%rax        # 3fe8 &lt;__gmon_start__&gt;
+    100b:   48 85 c0                test   %rax,%rax
+    100e:   74 02                   je     1012 &lt;_init+0x12&gt;
+    1010:   ff d0                   callq  *%rax
+    1012:   48 83 c4 08             add    $0x8,%rsp
+    1016:   c3                      retq
+
+Desensamblado de la sección .plt:
+
+0000000000001020 &lt;.plt&gt;:
+    1020:   ff 35 e2 2f 00 00       pushq  0x2fe2(%rip)        # 4008 &lt;_GLOBAL_OFFSET_TABLE_+0x8&gt;
+    1026:   ff 25 e4 2f 00 00       jmpq   *0x2fe4(%rip)        # 4010 &lt;_GLOBAL_OFFSET_TABLE_+0x10&gt;
+    102c:   0f 1f 40 00             nopl   0x0(%rax)
+
+0000000000001030 &lt;printf@plt&gt;:
+    1030:   ff 25 e2 2f 00 00       jmpq   *0x2fe2(%rip)        # 4018 &lt;printf@GLIBC_2.2.5&gt;
+    1036:   68 00 00 00 00          pushq  $0x0
+    103b:   e9 e0 ff ff ff          jmpq   1020 &lt;.plt&gt;
+
+Desensamblado de la sección .plt.got:
+
+0000000000001040 &lt;__cxa_finalize@plt&gt;:
+    1040:   ff 25 b2 2f 00 00       jmpq   *0x2fb2(%rip)        # 3ff8 &lt;__cxa_finalize@GLIBC_2.2.5&gt;
+    1046:   66 90                   xchg   %ax,%ax
+
+Desensamblado de la sección .text:
+
+0000000000001050 &lt;_start&gt;:
+    1050:   31 ed                   xor    %ebp,%ebp
+    1052:   49 89 d1                mov    %rdx,%r9
+    1055:   5e                      pop    %rsi
+    1056:   48 89 e2                mov    %rsp,%rdx
+    1059:   48 83 e4 f0             and    $0xfffffffffffffff0,%rsp
+    105d:   50                      push   %rax
+    105e:   54                      push   %rsp
+    105f:   4c 8d 05 7a 01 00 00    lea    0x17a(%rip),%r8        # 11e0 &lt;__libc_csu_fini&gt;
+    1066:   48 8d 0d 13 01 00 00    lea    0x113(%rip),%rcx        # 1180 &lt;__libc_csu_init&gt;
+    106d:   48 8d 3d c1 00 00 00    lea    0xc1(%rip),%rdi        # 1135 &lt;main&gt;
+    1074:   ff 15 66 2f 00 00       callq  *0x2f66(%rip)        # 3fe0 &lt;__libc_start_main@GLIBC_2.2.5&gt;
+    107a:   f4                      hlt
+    107b:   0f 1f 44 00 00          nopl   0x0(%rax,%rax,1)
+
+0000000000001080 &lt;deregister_tm_clones&gt;:
+    1080:   48 8d 3d a9 2f 00 00    lea    0x2fa9(%rip),%rdi        # 4030 &lt;__TMC_END__&gt;
+    1087:   48 8d 05 a2 2f 00 00    lea    0x2fa2(%rip),%rax        # 4030 &lt;__TMC_END__&gt;
+    108e:   48 39 f8                cmp    %rdi,%rax
+    1091:   74 15                   je     10a8 &lt;deregister_tm_clones+0x28&gt;
+    1093:   48 8b 05 3e 2f 00 00    mov    0x2f3e(%rip),%rax        # 3fd8 &lt;_ITM_deregisterTMCloneTable&gt;
+    109a:   48 85 c0                test   %rax,%rax
+    109d:   74 09                   je     10a8 &lt;deregister_tm_clones+0x28&gt;
+    109f:   ff e0                   jmpq   *%rax
+    10a1:   0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+    10a8:   c3                      retq
+    10a9:   0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+
+00000000000010b0 &lt;register_tm_clones&gt;:
+    10b0:   48 8d 3d 79 2f 00 00    lea    0x2f79(%rip),%rdi        # 4030 &lt;__TMC_END__&gt;
+    10b7:   48 8d 35 72 2f 00 00    lea    0x2f72(%rip),%rsi        # 4030 &lt;__TMC_END__&gt;
+    10be:   48 29 fe                sub    %rdi,%rsi
+    10c1:   48 89 f0                mov    %rsi,%rax
+    10c4:   48 c1 ee 3f             shr    $0x3f,%rsi
+    10c8:   48 c1 f8 03             sar    $0x3,%rax
+    10cc:   48 01 c6                add    %rax,%rsi
+    10cf:   48 d1 fe                sar    %rsi
+    10d2:   74 14                   je     10e8 &lt;register_tm_clones+0x38&gt;
+    10d4:   48 8b 05 15 2f 00 00    mov    0x2f15(%rip),%rax        # 3ff0 &lt;_ITM_registerTMCloneTable&gt;
+    10db:   48 85 c0                test   %rax,%rax
+    10de:   74 08                   je     10e8 &lt;register_tm_clones+0x38&gt;
+    10e0:   ff e0                   jmpq   *%rax
+    10e2:   66 0f 1f 44 00 00       nopw   0x0(%rax,%rax,1)
+    10e8:   c3                      retq
+    10e9:   0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+
+00000000000010f0 &lt;__do_global_dtors_aux&gt;:
+    10f0:   80 3d 39 2f 00 00 00    cmpb   $0x0,0x2f39(%rip)        # 4030 &lt;__TMC_END__&gt;
+    10f7:   75 2f                   jne    1128 &lt;__do_global_dtors_aux+0x38&gt;
+    10f9:   55                      push   %rbp
+    10fa:   48 83 3d f6 2e 00 00    cmpq   $0x0,0x2ef6(%rip)        # 3ff8 &lt;__cxa_finalize@GLIBC_2.2.5&gt;
+    1101:   00
+    1102:   48 89 e5                mov    %rsp,%rbp
+    1105:   74 0c                   je     1113 &lt;__do_global_dtors_aux+0x23&gt;
+    1107:   48 8b 3d 1a 2f 00 00    mov    0x2f1a(%rip),%rdi        # 4028 &lt;__dso_handle&gt;
+    110e:   e8 2d ff ff ff          callq  1040 &lt;__cxa_finalize@plt&gt;
+    1113:   e8 68 ff ff ff          callq  1080 &lt;deregister_tm_clones&gt;
+    1118:   c6 05 11 2f 00 00 01    movb   $0x1,0x2f11(%rip)        # 4030 &lt;__TMC_END__&gt;
+    111f:   5d                      pop    %rbp
+    1120:   c3                      retq
+    1121:   0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+    1128:   c3                      retq
+    1129:   0f 1f 80 00 00 00 00    nopl   0x0(%rax)
+
+0000000000001130 &lt;frame_dummy&gt;:
+    1130:   e9 7b ff ff ff          jmpq   10b0 &lt;register_tm_clones&gt;
+
+0000000000001135 &lt;main&gt;:
+    1135:   55                      push   %rbp
+    1136:   48 89 e5                mov    %rsp,%rbp
+    1139:   48 83 ec 20             sub    $0x20,%rsp
+    113d:   89 7d ec                mov    %edi,-0x14(%rbp)
+    1140:   48 89 75 e0             mov    %rsi,-0x20(%rbp)
+    1144:   c7 45 fc 0f 00 00 00    movl   $0xf,-0x4(%rbp)
+    114b:   c7 45 f8 14 00 00 00    movl   $0x14,-0x8(%rbp)
+    1152:   8b 55 fc                mov    -0x4(%rbp),%edx
+    1155:   8b 45 f8                mov    -0x8(%rbp),%eax
+    1158:   01 d0                   add    %edx,%eax
+    115a:   89 45 f4                mov    %eax,-0xc(%rbp)
+    115d:   8b 4d f4                mov    -0xc(%rbp),%ecx
+    1160:   8b 55 f8                mov    -0x8(%rbp),%edx
+    1163:   8b 45 fc                mov    -0x4(%rbp),%eax
+    1166:   89 c6                   mov    %eax,%esi
+    1168:   48 8d 3d 99 0e 00 00    lea    0xe99(%rip),%rdi        # 2008 &lt;_IO_stdin_used+0x8&gt;
+    116f:   b8 00 00 00 00          mov    $0x0,%eax
+    1174:   e8 b7 fe ff ff          callq  1030 &lt;printf@plt&gt;
+    1179:   b8 00 00 00 00          mov    $0x0,%eax
+    117e:   c9                      leaveq
+    117f:   c3                      retq
+
+0000000000001180 &lt;__libc_csu_init&gt;:
+    1180:   41 57                   push   %r15
+    1182:   4c 8d 3d 5f 2c 00 00    lea    0x2c5f(%rip),%r15        # 3de8 &lt;__frame_dummy_init_array_entry&gt;
+    1189:   41 56                   push   %r14
+    118b:   49 89 d6                mov    %rdx,%r14
+    118e:   41 55                   push   %r13
+    1190:   49 89 f5                mov    %rsi,%r13
+    1193:   41 54                   push   %r12
+    1195:   41 89 fc                mov    %edi,%r12d
+    1198:   55                      push   %rbp
+    1199:   48 8d 2d 50 2c 00 00    lea    0x2c50(%rip),%rbp        # 3df0 &lt;__do_global_dtors_aux_fini_array_entry&gt;
+    11a0:   53                      push   %rbx
+    11a1:   4c 29 fd                sub    %r15,%rbp
+    11a4:   48 83 ec 08             sub    $0x8,%rsp
+    11a8:   e8 53 fe ff ff          callq  1000 &lt;_init&gt;
+    11ad:   48 c1 fd 03             sar    $0x3,%rbp
+    11b1:   74 1b                   je     11ce &lt;__libc_csu_init+0x4e&gt;
+    11b3:   31 db                   xor    %ebx,%ebx
+    11b5:   0f 1f 00                nopl   (%rax)
+    11b8:   4c 89 f2                mov    %r14,%rdx
+    11bb:   4c 89 ee                mov    %r13,%rsi
+    11be:   44 89 e7                mov    %r12d,%edi
+    11c1:   41 ff 14 df             callq  *(%r15,%rbx,8)
+    11c5:   48 83 c3 01             add    $0x1,%rbx
+    11c9:   48 39 dd                cmp    %rbx,%rbp
+    11cc:   75 ea                   jne    11b8 &lt;__libc_csu_init+0x38&gt;
+    11ce:   48 83 c4 08             add    $0x8,%rsp
+    11d2:   5b                      pop    %rbx
+    11d3:   5d                      pop    %rbp
+    11d4:   41 5c                   pop    %r12
+    11d6:   41 5d                   pop    %r13
+    11d8:   41 5e                   pop    %r14
+    11da:   41 5f                   pop    %r15
+    11dc:   c3                      retq
+    11dd:   0f 1f 00                nopl   (%rax)
+
+00000000000011e0 &lt;__libc_csu_fini&gt;:
+    11e0:   c3                      retq
+
+Desensamblado de la sección .fini:
+
+00000000000011e4 &lt;_fini&gt;:
+    11e4:   48 83 ec 08             sub    $0x8,%rsp
+    11e8:   48 83 c4 08             add    $0x8,%rsp
+    11ec:   c3                      retq
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="traductores-de-codigo">
+<h2>Traductores de código<a class="headerlink" href="#traductores-de-codigo" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Existen dos tipos de lenguajes de programación en cuanto a la <strong>forma de obtener el código máquina</strong> o ejecutable: lenguajes <strong>interpretados</strong> y lenguajes <strong>compilados</strong>.</p>
+<p>En los lenguajes interpretados, un programa llamado <strong>intérprete</strong> es el encargado de ir traduciendo el programa a medida que sea necesario, típicamente instrucción a instrucción, y normalmente no guardan el resultado de esa traducción.</p>
+<p>En los lenguajes compilados, un programa llamado <strong>compilador</strong> traduce todo el programa a lenguaje máquina generando un segundo fichero con dicha traducción.</p>
+<p>Sea interpretado o compilado <strong>el programa es ejecutado por medio del sistema operativo</strong> y, dicho código, está preparado para ser <strong>ejecutado en una arquitectura de CPU</strong> concreta (x86-32, x86-64, MIPS, ARM, etc). Este es el encargado de cargar el programa ejecutable en memoria y gestionar su ejecución por medio de una serie de algoritmos de gestión de procesos.</p>
+<p>En el siguiente apartado te voy a explicar cómo funciona un <strong>compilador</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Ejemplos de lenguajes interpretados son: <strong>Python</strong> o <strong>PHP</strong>.</p>
+<p>Ejemplos de lenguajes compilados son: <strong>C</strong> o <strong>Java</strong>. Aunque el compilador  de <strong>Java</strong>, como veremos más adelante, genera un código máquina intermedio que será ejecutado por una máquina virtual.</p>
+</div>
+</section>
+<section id="compiladores-proceso-de-traduccion">
+<h2>Compiladores: proceso de traducción<a class="headerlink" href="#compiladores-proceso-de-traduccion" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Todo comienza cuando el programador <strong>escribe el código fuente</strong>, normalmente en varios ficheros.</p>
+<p>A continuación, se ejecuta el compilador sobre dichos ficheros generando <strong>el código objeto</strong> y dando como resultado los mismos ficheros pero con dicho código objeto. Esta traducción solo se realiza si no hay errores léxicos, sintáctico y/o semánticos en el código fuente escrito por el programador. Si hay errores en el código, el compilador avisa al programador de dichos errores.</p>
+<p>Una vez se tienen los ficheros objeto, un programa llamado <strong>linker</strong> enlaza todos los ficheros con el código objeto y bibliotecas generando un solo fichero con el <strong>código máquina o ejecutable</strong>. El programa <strong>linker</strong> forma parte del compilador y, si no se indica lo contrario, el compilador generará el código objeto y ejecuta, a continuación, el linker automáticamente, sin que tengas que hacer nada extra.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="_images/fases_compilador.png"><img alt="_images/fases_compilador.png" src="_images/fases_compilador.png" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">Fases de un compilador: traducción y enlace (<em>linkado</em>)</span><a class="headerlink" href="#id5" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>El compilador genera el código ejecutable para una CPU y sistema operativo concreto. Si quieres tener el programa listo para ser ejecutado en CPU MIPS, x86-64 y ARM, entonces tienes que compilar el programa 3 veces, para obtener el código ejecutable en cada una de estas tres arquitecturas.</p>
+</div>
+</section>
+<section id="codigo-intermedio-y-maquinas-virtuales">
+<h2>Código intermedio y máquinas virtuales<a class="headerlink" href="#codigo-intermedio-y-maquinas-virtuales" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Como ya se ha comentado, el código ejecutable o máquina está listo para ser ejecutado por un tipo de CPU concreta.</p>
+<p>Hay lenguajes, como <strong>Java</strong>, para los que el compilador genera un código intermedio genérico que es ejecutado por una máquina virtual. Este código intermedio se denomina <strong>bytecode</strong>.</p>
+<p>De esta manera no hace falta compilar el código fuente varias veces para ser ejecutado en varias CPU, se construye un código genérico ejecutable por cualquier máquina. No obstante, para poder ejecutar estos programas antes necesitas instalar la máquina virtual en tu ordenador.</p>
+<p>Siguiendo con el ejemplo de <strong>Java</strong>, este tiene un compilador, <strong>javac</strong>, que genera código intermedio (<strong>bytecode</strong>) para ser ejecutado por la <strong>Java Virtual Machine</strong> o <em>JVM</em>.</p>
+<p>Si quieres ejecutar en tu ordenador programas en Java, tienes que instalar el <strong>JRE</strong> (<em>Java Runtime Environment</em>). Si quieres desarrollar programas en Java, entonces necesitas instalar el <strong>JDK</strong> (<em>Java Development Kit</em>), que incluye el JRE.</p>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="_images/java_bytecode.png"><img alt="_images/java_bytecode.png" src="_images/java_bytecode.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-text">Esquema de la arquitectura general de un programa en ejecución en una JVM</span><a class="headerlink" href="#id6" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Por último, aquí te muestro el código fuente de un programa en Java que suma dos números y muestra el resultado por pantalla. Y, también, el <em>bytecode</em>.</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-Q8OzZGlnbyBmdWVudGUgZW4gSmF2YQ==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-Q8OzZGlnbyBmdWVudGUgZW4gSmF2YQ==" name="Q8OzZGlnbyBmdWVudGUgZW4gSmF2YQ==" role="tab" tabindex="0">Código fuente en Java</button><button aria-controls="panel-1-Qnl0ZWNvZGUgZGVsIGPDs2RpZ28gZW4gSmF2YQ==" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-Qnl0ZWNvZGUgZGVsIGPDs2RpZ28gZW4gSmF2YQ==" name="Qnl0ZWNvZGUgZGVsIGPDs2RpZ28gZW4gSmF2YQ==" role="tab" tabindex="-1">Bytecode del código en Java</button></div><div aria-labelledby="tab-1-Q8OzZGlnbyBmdWVudGUgZW4gSmF2YQ==" class="sphinx-tabs-panel group-tab" id="panel-1-Q8OzZGlnbyBmdWVudGUgZW4gSmF2YQ==" name="Q8OzZGlnbyBmdWVudGUgZW4gSmF2YQ==" role="tabpanel" tabindex="0"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="n">resultado</span><span class="p">;</span>
+
+        <span class="n">num1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="n">num2</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+
+        <span class="n">resultado</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">;</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Resultado de sumar &quot;</span> <span class="o">+</span> <span class="n">num1</span> <span class="o">+</span> <span class="s">&quot; y &quot;</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="s">&quot; = &quot;</span> <span class="o">+</span> <span class="n">resultado</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div><div aria-labelledby="tab-1-Qnl0ZWNvZGUgZGVsIGPDs2RpZ28gZW4gSmF2YQ==" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-Qnl0ZWNvZGUgZGVsIGPDs2RpZ28gZW4gSmF2YQ==" name="Qnl0ZWNvZGUgZGVsIGPDs2RpZ28gZW4gSmF2YQ==" role="tabpanel" tabindex="0"><div class="highlight-text notranslate"><div class="highlight"><pre><span></span>public class Main {
+    public Main();
+        Code:
+        0: aload_0
+        1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V
+        4: return
+
+    public static void main(java.lang.String[]);
+        Code:
+        0: bipush        10
+        2: istore_1
+        3: bipush        15
+        5: istore_2
+        6: iload_1
+        7: iload_2
+        8: iadd
+        9: istore_3
+        10: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+        13: iload_1
+        14: iload_2
+        15: iload_3
+        16: invokedynamic #13,  0             // InvokeDynamic #0:makeConcatWithConstants:(III)Ljava/lang/String;
+        21: invokevirtual #17                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        24: return
+    }
+</pre></div>
+</div>
+</div></div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="lab1.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Laboratorio 1: generación de código máquina</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="lenguajes_alto_nivel_clasificacion.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Lenguajes de alto nivel: clasificación</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Román Ginés Martínez Ferrández
+            </div>
+            Made with 
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contenidos
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Fases en la obtención del código</a><ul>
+<li><a class="reference internal" href="#codigo-fuente-objeto-y-ejecutable">Código fuente, objeto y ejecutable</a><ul>
+<li><a class="reference internal" href="#codigo-fuente">Código fuente</a></li>
+<li><a class="reference internal" href="#codigo-objeto">Código objeto</a></li>
+<li><a class="reference internal" href="#codigo-ejecutable-o-maquina">Código ejecutable o máquina</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#traductores-de-codigo">Traductores de código</a></li>
+<li><a class="reference internal" href="#compiladores-proceso-de-traduccion">Compiladores: proceso de traducción</a></li>
+<li><a class="reference internal" href="#codigo-intermedio-y-maquinas-virtuales">Código intermedio y máquinas virtuales</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script src="_static/tabs.js"></script>
+    <script src="_static/translations.js"></script>
+    </body>
+</html>
