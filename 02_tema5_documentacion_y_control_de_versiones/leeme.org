@@ -1,0 +1,4 @@
+* Recursos para este tema
+- En la carpeta *doc* está todo el material y prácticas a realizar (en formato ReStructured Text).
+- En la carpeta *presentacion* tengo las presentaciones que voy a emplear para impartir clase durante este tema. Aquí, además, se van indicando las prácticas y el momento en que se van a realizar.
+- En la carpeta *gitrain* están las prácticas guiadas de Git. Se trata, en realidad, de una práctica guiada dividida en varias partes, cada una de estás partes está desarrollada en el *doc*.

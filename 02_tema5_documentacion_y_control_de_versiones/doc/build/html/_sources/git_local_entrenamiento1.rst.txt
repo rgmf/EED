@@ -3,6 +3,7 @@ Práctica entrenamiento 1: Git en local
 Crea una carpeta en tu ordenador llamada :file:`gitrain`, entra en ella y sigue los pasos siguientes.
 
 Antes, para el desarrollo de esta práctica necesitas tener instalado estos dos programas:
+
 - Visual Studio Code.
 - Git.
 
