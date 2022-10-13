@@ -162,6 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="git_intro.html">Git: primeros pasos</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Práctica entrenamiento 1: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento2.html">Práctica entrenamiento 2: Git en local</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento3.html">Práctica entrenamiento 3: Git en local</a></li>
 </ul>
 
 </div>
@@ -202,6 +203,15 @@
 <ul class="simple">
 <li><p>Visual Studio Code.</p></li>
 <li><p>Git.</p></li>
+</ul>
+<p>Qué vas a aprender en esta práctica de entrenamiento con Git:</p>
+<ul class="simple">
+<li><p>Configurar Git.</p></li>
+<li><p>Iniciar un repositorio local (<strong class="command">git init</strong>).</p></li>
+<li><p>Añadir ficheros al repositorio (<strong class="command">git add</strong>).</p></li>
+<li><p>Confirmar los cambios (<strong class="command">git commit</strong>).</p></li>
+<li><p>Ver el estado del repositorio (<strong class="command">git status</strong>).</p></li>
+<li><p>Ver el historial de confirmaciones o <em>commits</em> (<strong class="command">git log</strong>).</p></li>
 </ul>
 <section id="paso-1-asegurate-que-tienes-configurado-git">
 <h2>Paso 1: asegúrate que tienes configurado Git<a class="headerlink" href="#paso-1-asegurate-que-tienes-configurado-git" title="Enlazar permanentemente con este título">#</a></h2>
@@ -255,7 +265,7 @@ Git es un software de gestión de versiones muy utilizado en el mundo del desarr
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git status
 </pre></div>
 </div>
-<p>Verás un menaje como el siguiente:</p>
+<p>Verás un mensaje como el siguiente:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">En la rama main</span>
 
 <span class="go">No hay commits todavía</span>
@@ -276,7 +286,7 @@ Git es un software de gestión de versiones muy utilizado en el mundo del desarr
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git add README.md
 </pre></div>
 </div>
-<p>Si tuvieras muchos ficheros a añadir, divididos en carpetas, los podrías añadir todos puniendo un punto al final del <strong class="command">git add</strong>, tal que así:</p>
+<p>Si tuvieras muchos ficheros a añadir, divididos en carpetas, los podrías añadir todos añadiendo un punto al final del <strong class="command">git add</strong>, tal que así:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git add .
 </pre></div>
 </div>

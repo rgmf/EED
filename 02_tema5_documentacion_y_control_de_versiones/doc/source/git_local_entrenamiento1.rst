@@ -7,6 +7,15 @@ Antes, para el desarrollo de esta práctica necesitas tener instalado estos dos 
 - Visual Studio Code.
 - Git.
 
+Qué vas a aprender en esta práctica de entrenamiento con Git:
+
+- Configurar Git.
+- Iniciar un repositorio local (:command:`git init`).
+- Añadir ficheros al repositorio (:command:`git add`).
+- Confirmar los cambios (:command:`git commit`).
+- Ver el estado del repositorio (:command:`git status`).
+- Ver el historial de confirmaciones o *commits* (:command:`git log`).
+
 Paso 1: asegúrate que tienes configurado Git
 ============================================
 Ya sabes que, antes de usar por primera vez Git, tienes que configurar, al menos:
@@ -67,7 +76,7 @@ Para ver el estado en que se encuentra el repositorio, puedes ejecutar el siguie
 
     $ git status
 
-Verás un menaje como el siguiente:
+Verás un mensaje como el siguiente:
 
 .. code-block:: console
 
@@ -93,7 +102,7 @@ Añade el fichero sin seguimiento :file:`README.md` al repositorio local de Git 
 
     $ git add README.md
 
-Si tuvieras muchos ficheros a añadir, divididos en carpetas, los podrías añadir todos puniendo un punto al final del :command:`git add`, tal que así:
+Si tuvieras muchos ficheros a añadir, divididos en carpetas, los podrías añadir todos añadiendo un punto al final del :command:`git add`, tal que así:
 
 .. code-block:: console
 

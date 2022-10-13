@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="prev" title="Práctica entrenamiento 1: Git en local" href="git_local_entrenamiento1.html" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Práctica entrenamiento 3: Git en local" href="git_local_entrenamiento3.html" /><link rel="prev" title="Práctica entrenamiento 1: Git en local" href="git_local_entrenamiento1.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
         <title>Práctica entrenamiento 2: Git en local - Control de versiones con git</title>
@@ -162,6 +162,7 @@
 <li class="toctree-l1"><a class="reference internal" href="git_intro.html">Git: primeros pasos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento1.html">Práctica entrenamiento 1: Git en local</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Práctica entrenamiento 2: Git en local</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento3.html">Práctica entrenamiento 3: Git en local</a></li>
 </ul>
 
 </div>
@@ -197,11 +198,10 @@
         <article role="main">
           <section id="practica-entrenamiento-2-git-en-local">
 <h1>Práctica entrenamiento 2: Git en local<a class="headerlink" href="#practica-entrenamiento-2-git-en-local" title="Enlazar permanentemente con este título">#</a></h1>
-<p>En esta práctica continuarás con el proyecto <strong>gitrain</strong> que iniciaste en la práctica de entrenamiento 2.</p>
+<p>En esta práctica continuarás con el proyecto <code class="file docutils literal notranslate"><span class="pre">gitrain</span></code> que iniciaste en la práctica de entrenamiento 1.</p>
 <p>Para desarrollar esta segunda parte necesitas haber completado la primera de las partes. Si no la tienes completada o quieres asegurarte que partes de donde lo debiste dejar, puedes descargar la primera parte aquí: <a class="reference external" href="_static/gitrain1.zip">primera parte del proyecto gitrain</a>.</p>
 <p>En esta segunda parte de entrenamiento voy a ser menos explícito, las instrucciones no van a venir acompañadas de los comandos ni los detalles a realizar.</p>
 <p>Recuerda hacer <strong class="command">git status</strong> y <strong class="command">git log</strong> cuando lo necesites.</p>
-<p>La <strong>novedad</strong> en este ejercicio se encuentra en el último punto donde aprenderás a volver a un <em>commit</em> anterior para deshacer una serie de cambios. En este último punto voy a ser bastante explícito. Si no lo entiendes no dudes en preguntar.</p>
 <section id="paso-1-jerarquia-de-directorios">
 <h2>Paso 1: jerarquía de directorios<a class="headerlink" href="#paso-1-jerarquia-de-directorios" title="Enlazar permanentemente con este título">#</a></h2>
 <p>Crea dentro de la carpeta <code class="file docutils literal notranslate"><span class="pre">gitrain</span></code> la siguiente jerarquía de directorios:</p>
@@ -239,7 +239,7 @@ desarrollado por Dennis Ritchie entre 1969 y 1972 en los Laboratorios Bell.
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Fichero de texto con nombre <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code> y el seguiente contenido:</p></li>
+<li><p>Fichero de texto con nombre <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code> y el siguiente contenido:</p></li>
 </ul>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Java es un lenguaje de programación y una plataforma informática que fue
 comercializada por primera vez en 1995 por Sun Microsystems.
@@ -250,9 +250,9 @@ comercializada por primera vez en 1995 por Sun Microsystems.
 <h2>Paso 5: añadir ficheros de texto<a class="headerlink" href="#paso-5-anadir-ficheros-de-texto" title="Enlazar permanentemente con este título">#</a></h2>
 <p>Añade los dos ficheros de texto que acabas de crear al seguimiento de Git y crea un commit con el mensaje <strong>Añadidos ficheros de texto con información sobre C y Java.</strong>.</p>
 </section>
-<section id="paso-6-eliminar-fichero">
-<h2>Paso 6: eliminar fichero<a class="headerlink" href="#paso-6-eliminar-fichero" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Si ejecutas un <strong class="command">git log</strong> para ver el historial de cambios (de <em>commits</em>) verás las siguiente información (3 <em>commits</em>):</p>
+<section id="paso-6-ver-el-estado-del-repositorio">
+<h2>Paso 6: ver el estado del repositorio<a class="headerlink" href="#paso-6-ver-el-estado-del-repositorio" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Si ejecutas un <strong class="command">git log</strong>, para ver el historial de cambios (de <em>commits</em>), verás la siguiente información (3 <em>commits</em>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5 (HEAD -&gt; main)</span>
 <span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
 <span class="go">Date:   Sun Sep 25 18:08:44 2022 +0200</span>
@@ -272,154 +272,6 @@ comercializada por primera vez en 1995 por Sun Microsystems.
 <span class="go">    He añadido un fichero README a mi proyecto.</span>
 </pre></div>
 </div>
-<p>Elimina el fichero <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code> y ejecuta un <strong class="command">git status</strong>. Verás la siguiente información:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">En la rama main</span>
-<span class="go">Cambios no rastreados para el commit:</span>
-<span class="go">    (usa &quot;git add/rm &lt;archivo&gt;...&quot; para actualizar a lo que se le va a hacer commit)</span>
-<span class="go">    (usa &quot;git restore &lt;archivo&gt;...&quot; para descartar los cambios en el directorio de trabajo)</span>
-<span class="go">        borrados:        src/txt/java.txt</span>
-
-<span class="go">sin cambios agregados al commit (usa &quot;git add&quot; y/o &quot;git commit -a&quot;)</span>
-</pre></div>
-</div>
-<p>Como ves nos indica que se ha borrado el fichero <code class="file docutils literal notranslate"><span class="pre">src/txt/java.txt</span></code> pero este cambio no tiene seguimiento en Git todavía. Tienes que hacer un <strong class="command">git add</strong> o <strong class="command">git rm</strong> como sigue:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git rm src/txt/java.txt
-</pre></div>
-</div>
-<p>Ahora sí, si ejecutas de nuevo el <strong class="command">git status</strong> verás que el fichero <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code> ha sido eliminado del repositorio de Git.</p>
-<p>Finalmente, ya sabes, tienes que confirmar el cambio con un <em>commit</em>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git commit -m <span class="s2">&quot;Elimando el fichero java.txt.&quot;</span>
-</pre></div>
-</div>
-</section>
-<section id="paso-7-volver-atras-a-un-commit">
-<h2>Paso 7: volver atrás, a un commit<a class="headerlink" href="#paso-7-volver-atras-a-un-commit" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Si ejecutas el comando <strong class="command">log</strong> de Git verás el siguiente histórico de <em>commits</em>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 3e38219ddfdb09abd0a03a9d0e63eb24390a0e00 (HEAD -&gt; main)</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 19:01:36 2022 +0200</span>
-
-<span class="go">    Elimando el fichero java.txt.</span>
-
-<span class="go">commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:08:44 2022 +0200</span>
-
-<span class="go">    Añadidos ficheros de texto con información sobre C y Java.</span>
-
-<span class="go">commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:02:36 2022 +0200</span>
-
-<span class="go">    Logotipos de Java añadidos al proyecto.</span>
-
-<span class="go">commit c7afc494c637463732d56711e9cc0da5bd274127</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Thu Sep 22 17:44:35 2022 +0200</span>
-
-<span class="go">    He añadido un fichero README a mi proyecto.</span>
-</pre></div>
-</div>
-<p>Imagina que quieres volver al commit <strong>ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5</strong>, es decir, al punto en el que tenías el fichero <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code> en el repositorio, porque te has arrepentido y quieres recuperar dicho fichero.</p>
-<p>Existen dos posibilidades:</p>
-<section id="primera-opcion">
-<h3>Primera opción:<a class="headerlink" href="#primera-opcion" title="Enlazar permanentemente con este título">#</a></h3>
-<p>Si solo quieres recuperar el fichero borrado bastaría con ejecutar el comando:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git checkout ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5 .
-</pre></div>
-</div>
-<p>No olvides el punto final.</p>
-<p>Y, por último, tienes que realizar un commit con la opción <strong>-a</strong> para añadir los nuevos fichero (el eliminado):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git commit -am <span class="s2">&quot;Restaurado desde el commit.&quot;</span>
-</pre></div>
-</div>
-<p>Si haces un <strong class="command">git log</strong> verás que hay un nuevo commit, el que acabamos de crear:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 5b2d351658c4b47c874400c0332f35edd186cbf3 (HEAD -&gt; main)</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 19:15:53 2022 +0200</span>
-
-<span class="go">    Restaurado desde el commit.</span>
-
-<span class="go">commit 3e38219ddfdb09abd0a03a9d0e63eb24390a0e00</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 19:01:36 2022 +0200</span>
-
-<span class="go">    Elimando el fichero java.txt.</span>
-
-<span class="go">commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:08:44 2022 +0200</span>
-
-<span class="go">    Añadidos ficheros de texto con información sobre C y Java.</span>
-
-<span class="go">commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:02:36 2022 +0200</span>
-
-<span class="go">    Logotipos de Java añadidos al proyecto.</span>
-
-<span class="go">commit c7afc494c637463732d56711e9cc0da5bd274127</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Thu Sep 22 17:44:35 2022 +0200</span>
-
-<span class="go">    He añadido un fichero README a mi proyecto.</span>
-</pre></div>
-</div>
-</section>
-<section id="segunda-opcion">
-<h3>Segunda opción:<a class="headerlink" href="#segunda-opcion" title="Enlazar permanentemente con este título">#</a></h3>
-<p>En este caso sería la mejor opción de todas. Hacer un <strong>hard reset</strong> al commit al que quieres volver.</p>
-<p>Recordemos el historial desde el que partimos:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 3e38219ddfdb09abd0a03a9d0e63eb24390a0e00 (HEAD -&gt; main)</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 19:01:36 2022 +0200</span>
-
-<span class="go">    Elimando el fichero java.txt.</span>
-
-<span class="go">commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:08:44 2022 +0200</span>
-
-<span class="go">    Añadidos ficheros de texto con información sobre C y Java.</span>
-
-<span class="go">commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:02:36 2022 +0200</span>
-
-<span class="go">    Logotipos de Java añadidos al proyecto.</span>
-
-<span class="go">commit c7afc494c637463732d56711e9cc0da5bd274127</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Thu Sep 22 17:44:35 2022 +0200</span>
-
-<span class="go">    He añadido un fichero README a mi proyecto.</span>
-</pre></div>
-</div>
-<p>Queremos volver al <em>commit</em> identificado por <strong>ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5</strong>. Pues bien, para volver a él, basta con ejecutar el siguiente comando:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git reset --hard ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5
-</pre></div>
-</div>
-<p>Por último, si haces un <strong class="command">git log</strong> para ver el historial, lo que vas a ver es que hemos vuelto al commit anterior, deshaciendo todo lo hecho en el último commit, en el que borramos el fichero <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5 (HEAD -&gt; main)</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:08:44 2022 +0200</span>
-
-<span class="go">    Añadidos ficheros de texto con información sobre C y Java.</span>
-
-<span class="go">commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:02:36 2022 +0200</span>
-
-<span class="go">    Logotipos de Java añadidos al proyecto.</span>
-
-<span class="go">commit c7afc494c637463732d56711e9cc0da5bd274127</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Thu Sep 22 17:44:35 2022 +0200</span>
-
-<span class="go">    He añadido un fichero README a mi proyecto.</span>
-</pre></div>
-</div>
-</section>
 </section>
 </section>
 
@@ -428,7 +280,15 @@ comercializada por primera vez en 1995 por Sun Microsystems.
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="git_local_entrenamiento3.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Práctica entrenamiento 3: Git en local</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="git_local_entrenamiento1.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -477,12 +337,7 @@ comercializada por primera vez en 1995 por Sun Microsystems.
 <li><a class="reference internal" href="#paso-3-anadir-imagenes">Paso 3: añadir imágenes</a></li>
 <li><a class="reference internal" href="#paso-4-crear-ficheros-de-texto">Paso 4: crear ficheros de texto</a></li>
 <li><a class="reference internal" href="#paso-5-anadir-ficheros-de-texto">Paso 5: añadir ficheros de texto</a></li>
-<li><a class="reference internal" href="#paso-6-eliminar-fichero">Paso 6: eliminar fichero</a></li>
-<li><a class="reference internal" href="#paso-7-volver-atras-a-un-commit">Paso 7: volver atrás, a un commit</a><ul>
-<li><a class="reference internal" href="#primera-opcion">Primera opción:</a></li>
-<li><a class="reference internal" href="#segunda-opcion">Segunda opción:</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#paso-6-ver-el-estado-del-repositorio">Paso 6: ver el estado del repositorio</a></li>
 </ul>
 </li>
 </ul>

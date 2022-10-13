@@ -7,3 +7,4 @@ Control de versiones con git
    git_intro
    git_local_entrenamiento1
    git_local_entrenamiento2
+   git_local_entrenamiento3
