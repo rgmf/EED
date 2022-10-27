@@ -10,3 +10,5 @@ Control de versiones con git
    git_local_entrenamiento3
    git_commit_ammend
    git_local_entrenamiento4
+   git_ignore
+   git_local_entrenamiento5

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Deshacer cosas" href="git_commit_ammend.html" /><link rel="prev" title="Práctica entrenamiento 2: Git en local" href="git_local_entrenamiento2.html" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="prev" title="Ignorar ficheros" href="git_ignore.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Práctica entrenamiento 3: Git en local - Control de versiones con git</title>
+        <title>Práctica entrenamiento 5: Git en local - Control de versiones con git</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
@@ -162,11 +162,11 @@
 <li class="toctree-l1"><a class="reference internal" href="git_intro.html">Git: primeros pasos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento1.html">Práctica entrenamiento 1: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento2.html">Práctica entrenamiento 2: Git en local</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Práctica entrenamiento 3: Git en local</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento3.html">Práctica entrenamiento 3: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_commit_ammend.html">Deshacer cosas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento4.html">Práctica entrenamiento 4: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_ignore.html">Ignorar ficheros</a></li>
-<li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento5.html">Práctica entrenamiento 5: Git en local</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Práctica entrenamiento 5: Git en local</a></li>
 </ul>
 
 </div>
@@ -200,93 +200,107 @@
           </label>
         </div>
         <article role="main">
-          <section id="practica-entrenamiento-3-git-en-local">
-<h1>Práctica entrenamiento 3: Git en local<a class="headerlink" href="#practica-entrenamiento-3-git-en-local" title="Enlazar permanentemente con este título">#</a></h1>
-<p>En esta práctica continuarás con el proyecto <code class="file docutils literal notranslate"><span class="pre">gitrain</span></code> que iniciaste en las prácticas de entrenamiento anteriores. Si no la tienes completada o quieres asegurarte que partes de donde lo debiste dejar, puedes descargar la segunda parte aquí: <a class="reference external" href="_static/gitrain2.zip">segunda parte del proyecto gitrain</a>.</p>
+          <section id="practica-entrenamiento-5-git-en-local">
+<h1>Práctica entrenamiento 5: Git en local<a class="headerlink" href="#practica-entrenamiento-5-git-en-local" title="Enlazar permanentemente con este título">#</a></h1>
+<p>En esta práctica continuarás con el proyecto <code class="file docutils literal notranslate"><span class="pre">gitrain</span></code> que iniciaste en las prácticas de entrenamiento anteriores. Si no la tienes completada o quieres asegurarte que partes de donde lo debiste dejar, puedes descargar la cuarta parte aquí: <a class="reference external" href="_static/gitrain4.zip">cuarta parte del proyecto gitrain</a>.</p>
 <p>Recuerda hacer <strong class="command">git status</strong> y <strong class="command">git log</strong> cuando lo necesites.</p>
-<p>Las <strong>novedades</strong> en esta parte son:</p>
+<p>La <strong>novedad</strong> en esta práctica guiada es que:</p>
 <ul class="simple">
-<li><p>Aprenderás a modificar ficheros.</p></li>
-<li><p>Aprenderás a eliminar ficheros.</p></li>
-<li><p>Aprenderás la diferencia entre ficheros no <strong>rastreados</strong> y ficheros sin <strong>seguimiento</strong>.</p></li>
+<li><p>Aprenderás a configurar Git para ignorar ciertos ficheros.</p></li>
 </ul>
-<section id="paso-1-modificaciones-en-el-repositorio">
-<h2>Paso 1: modificaciones en el repositorio<a class="headerlink" href="#paso-1-modificaciones-en-el-repositorio" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Abre el fichero <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code> y añade, al final del fichero, el siguiente texto:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">El</span> <span class="n">lenguaje</span> <span class="n">de</span> <span class="n">programación</span> <span class="n">Java</span> <span class="n">fue</span> <span class="n">desarrollado</span> <span class="n">originalmente</span> <span class="n">por</span> <span class="n">James</span> <span class="n">Gosling</span><span class="p">,</span>
-<span class="n">de</span> <span class="n">Sun</span> <span class="n">Microsystems</span> <span class="p">(</span><span class="n">constituida</span> <span class="n">en</span> <span class="mi">1983</span> <span class="n">y</span> <span class="n">posteriormente</span> <span class="n">adquirida</span> <span class="n">el</span> <span class="mi">27</span> <span class="n">de</span> <span class="n">enero</span>
-<span class="n">de</span> <span class="mi">2010</span> <span class="n">por</span> <span class="n">la</span> <span class="n">compañía</span> <span class="n">Oracle</span><span class="p">)</span>
+<section id="paso-1-escribe-un-programa-en-java">
+<h2>Paso 1: escribe un programa en Java<a class="headerlink" href="#paso-1-escribe-un-programa-en-java" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Crea una carpeta dentro de <code class="file docutils literal notranslate"><span class="pre">src</span></code> llamada <code class="file docutils literal notranslate"><span class="pre">java</span></code>. Ahora, dentro de esa carpeta <code class="file docutils literal notranslate"><span class="pre">java</span></code> crea un fichero <code class="file docutils literal notranslate"><span class="pre">Main.java</span></code> con un programa en Java que genere un número aleatorio entre 1 y 10 y lo muestre por pantalla:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.Math</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">numero</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El número que ha salido es: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">numero</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
-<section id="paso-2-eliminar-fichero">
-<h2>Paso 2: eliminar fichero<a class="headerlink" href="#paso-2-eliminar-fichero" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Elimina el fichero <code class="file docutils literal notranslate"><span class="pre">c.txt</span></code>.</p>
+<section id="paso-2-anade-el-nuevo-fichero-al-area-stage">
+<h2>Paso 2: añade el nuevo fichero al área <em>stage</em><a class="headerlink" href="#paso-2-anade-el-nuevo-fichero-al-area-stage" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Añade el nuevo fichero <code class="file docutils literal notranslate"><span class="pre">Main.java</span></code> al aréa de preparación o <em>stage</em>.</p>
 </section>
-<section id="paso-3-anadir-un-nuevo-fichero">
-<h2>Paso 3: añadir un nuevo fichero<a class="headerlink" href="#paso-3-anadir-un-nuevo-fichero" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Crea un nuevo fichero dentro de <code class="file docutils literal notranslate"><span class="pre">src/txt/</span></code> con el nombre <code class="file docutils literal notranslate"><span class="pre">python.txt</span></code> y el siguiente texto:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">high</span><span class="o">-</span><span class="n">level</span><span class="p">,</span> <span class="n">general</span><span class="o">-</span><span class="n">purpose</span> <span class="n">programming</span> <span class="n">language</span><span class="o">.</span>
-<span class="n">Its</span> <span class="n">design</span> <span class="n">philosophy</span> <span class="n">emphasizes</span> <span class="n">code</span> <span class="n">readability</span> <span class="k">with</span> <span class="n">the</span> <span class="n">use</span>
-<span class="n">of</span> <span class="n">significant</span> <span class="n">indentation</span><span class="o">.</span>
+<section id="paso-3-compila-el-programa-anterior">
+<h2>Paso 3: compila el programa anterior<a class="headerlink" href="#paso-3-compila-el-programa-anterior" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Entra a la carpeta donde está el programa en Java anterior y compílalo para obtener el <code class="file docutils literal notranslate"><span class="pre">Main.class</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>javac Main.java
+</pre></div>
+</div>
+<p>Verás que se ha generado en el mismo lugar dicho fichero <code class="file docutils literal notranslate"><span class="pre">Main.class</span></code> y, por eso, puedes ejecutarlo:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>java Main
 </pre></div>
 </div>
 </section>
-<section id="paso-3-ver-estado">
-<h2>Paso 3: ver estado<a class="headerlink" href="#paso-3-ver-estado" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Si ejecutas un <strong class="command">git status</strong> verás la siguiente información:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">En la rama main</span>
-<span class="go">Cambios no rastreados para el commit:</span>
-<span class="gp gp-VirtualEnv">(usa &quot;git add/rm &lt;archivo&gt;...&quot; para actualizar a lo que se le va a hacer commit)</span>
-<span class="gp gp-VirtualEnv">(usa &quot;git restore &lt;archivo&gt;...&quot; para descartar los cambios en el directorio de trabajo)</span>
-<span class="go">    borrados:        src/txt/c.txt</span>
-<span class="go">    modificados:     src/txt/java.txt</span>
+<section id="paso-4-fijate-en-el-estado-de-git">
+<h2>Paso 4: fíjate en el estado de git<a class="headerlink" href="#paso-4-fijate-en-el-estado-de-git" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Si ejecutas un <strong class="command">git status</strong> verás que hay dos nuevos ficheros sin rastrear:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git status
+<span class="go">En la rama main</span>
+<span class="go">Cambios a ser confirmados:</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git restore --staged &lt;archivo&gt;...&quot; para sacar del área de stage)</span>
+<span class="go">    nuevos archivos: src/java/Main.java</span>
 
 <span class="go">Archivos sin seguimiento:</span>
 <span class="gp gp-VirtualEnv">(usa &quot;git add &lt;archivo&gt;...&quot; para incluirlo a lo que se será confirmado)</span>
-<span class="go">    src/txt/python.txt</span>
-
-<span class="go">sin cambios agregados al commit (usa &quot;git add&quot; y/o &quot;git commit -a&quot;)</span>
+<span class="go">    src/java/Main.class</span>
 </pre></div>
 </div>
-<p>Como ves, aparecen <strong>cambios no rastreados</strong> y <strong>archivos sin seguimiento</strong>. ¿Qué diferencia hay?</p>
-<ul class="simple">
-<li><p>Los cambios <strong>no rastreados</strong> son cambios sobre ficheros que ya existían en el último <em>commit</em> que no están en el área de preparación o <em>stage</em>.</p></li>
-<li><p>Los archivos <strong>sin seguimiento</strong> son archivos que no están en el último <em>commit</em> (son nuevos) y que no se han añadido al área de preparación o <em>stage</em>.</p></li>
-</ul>
-<p>En general hay tres cambios:</p>
-<ul class="simple">
-<li><p>Eliminado el fichero <code class="file docutils literal notranslate"><span class="pre">src/txt/c.txt</span></code>,</p></li>
-<li><p>Modificado el fichero <code class="file docutils literal notranslate"><span class="pre">src/txt/java.txt</span></code> y</p></li>
-<li><p>Nuevo fichero <code class="file docutils literal notranslate"><span class="pre">src/txt/python.txt</span></code>.</p></li>
-</ul>
-<p>De momento, estos cambios no están preparados para el siguiente <em>commit</em>, es decir, no están en el stado <em>stage</em>.</p>
+<p>Como ves aparece el fichero <code class="file docutils literal notranslate"><span class="pre">Main.java</span></code> en el área de preparación listo para el siguiente <em>commit</em> que venga y el fichero <code class="file docutils literal notranslate"><span class="pre">Main.class</span></code> fuera del seguimiento de Git.</p>
 </section>
-<section id="paso-4-preparar-siguiente-commit">
-<h2>Paso 4: preparar siguiente commit<a class="headerlink" href="#paso-4-preparar-siguiente-commit" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Vamos a preparar el siguiente <em>commit</em> (instantánea) con todos los cambios realizados. Para ello, hay que añadir todos los cambios anteriores al área de preparación o <em>stage</em>. ¿Cómo? con el comando <strong class="command">git add</strong> como ves a continuación:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git add src/txt/c.txt src/txt/java.txt src/txt/python.txt
-</pre></div>
-</div>
-<p>Ahora, si ejecutas el comando <strong class="command">git status</strong> verás la siguiente información:</p>
+<section id="paso-5-creando-y-configurando-gitignore">
+<h2>Paso 5: creando y configurando .gitignore<a class="headerlink" href="#paso-5-creando-y-configurando-gitignore" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Crea el fichero <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code> dentro de la raíz del proyecto y escribe en él el patrón necesario para que Git ignore los ficheros <code class="file docutils literal notranslate"><span class="pre">.class</span></code> estén dónde estén.</p>
+<p>Puedes probar si funciona el patrón ejecutando de nuevo el <strong class="command">git status</strong> y no debería aparecer el <code class="file docutils literal notranslate"><span class="pre">Main.class</span></code> por ningún lado, sino lo siguiente:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">En la rama main</span>
 <span class="go">Cambios a ser confirmados:</span>
 <span class="gp gp-VirtualEnv">(usa &quot;git restore --staged &lt;archivo&gt;...&quot; para sacar del área de stage)</span>
-<span class="go">    borrados:        src/txt/c.txt</span>
-<span class="go">    modificados:     src/txt/java.txt</span>
-<span class="go">    nuevos archivos: src/txt/python.txt</span>
+<span class="go">    nuevos archivos: src/java/Main.java</span>
+
+<span class="go">Archivos sin seguimiento:</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git add &lt;archivo&gt;...&quot; para incluirlo a lo que se será confirmado)</span>
+<span class="go">    .gitignore</span>
 </pre></div>
 </div>
-<p>Como ves, ahora sí están preparados todos los cambios para realizar el <em>commit</em>, es decir, la instantánea.</p>
 </section>
-<section id="paso-5-hacer-el-commit">
-<h2>Paso 5: hacer el commit<a class="headerlink" href="#paso-5-hacer-el-commit" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Realiza el <em>commit</em> añadiendo el siguiente mensaje: <cite>Quitado C, añadido Python y ampliado Java.</cite></p>
+<section id="paso-6-anade-gitignore-al-area-stage">
+<h2>Paso 6: añade .gitignore al área <em>stage</em><a class="headerlink" href="#paso-6-anade-gitignore-al-area-stage" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Añade el fichero <code class="file docutils literal notranslate"><span class="pre">.gitignore</span></code> al área de preparación o <em>stage</em>.</p>
+<p>En el estado de Git verás:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">En la rama main</span>
+<span class="go">Cambios a ser confirmados:</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git restore --staged &lt;archivo&gt;...&quot; para sacar del área de stage)</span>
+<span class="go">    nuevos archivos: .gitignore</span>
+<span class="go">    nuevos archivos: src/java/Main.java</span>
+</pre></div>
+</div>
 </section>
-<section id="paso-6-revisa-el-historial">
-<h2>Paso 6: revisa el historial<a class="headerlink" href="#paso-6-revisa-el-historial" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Si echas un vistazo al historial deberías ver los siguientes <em>commits</em>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 8f8b69a5856e9ddbb3e4ab7aca24aec5bef1be27 (HEAD -&gt; main)</span>
+<section id="paso-7-crea-el-nuevo-commit">
+<h2>Paso 7: crea el nuevo <em>commit</em><a class="headerlink" href="#paso-7-crea-el-nuevo-commit" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Crea un nuevo <em>commit</em> con los cambios y el mensaje: <cite>Añadido .gitignore y programa en Java.</cite></p>
+</section>
+<section id="paso-8-ver-el-historial-de-cambios">
+<h2>Paso 8: ver el historial de cambios<a class="headerlink" href="#paso-8-ver-el-historial-de-cambios" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Si ejecutas el comando de Git para ver el histórico de cambios deberías ver estos 6 <em>commits</em>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit da5acbb0dd35da1145506d5d17868733f2449b4c (HEAD -&gt; main)</span>
+<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
+<span class="go">Date:   Thu Oct 27 20:00:25 2022 +0200</span>
+
+<span class="go">    Añadido .gitignore y programa en Java.</span>
+
+<span class="go">commit b1f80a9d4f67a7fe4b0d3070848c0e7bdc8b2e05</span>
+<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
+<span class="go">Date:   Thu Oct 27 17:12:23 2022 +0200</span>
+
+<span class="go">    Nuevo fichero done se explica qué es PHP.</span>
+<span class="go">    Traducido al español el fichero de Python.</span>
+
+<span class="go">commit 8f8b69a5856e9ddbb3e4ab7aca24aec5bef1be27</span>
 <span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
 <span class="go">Date:   Thu Oct 27 15:13:02 2022 +0200</span>
 
@@ -319,23 +333,15 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="git_commit_ammend.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Deshacer cosas</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="git_local_entrenamiento2.html">
+          
+          <a class="prev-page" href="git_ignore.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Práctica entrenamiento 2: Git en local</div>
+                <div class="title">Ignorar ficheros</div>
                 
               </div>
             </a>
@@ -370,14 +376,15 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Práctica entrenamiento 3: Git en local</a><ul>
-<li><a class="reference internal" href="#paso-1-modificaciones-en-el-repositorio">Paso 1: modificaciones en el repositorio</a></li>
-<li><a class="reference internal" href="#paso-2-eliminar-fichero">Paso 2: eliminar fichero</a></li>
-<li><a class="reference internal" href="#paso-3-anadir-un-nuevo-fichero">Paso 3: añadir un nuevo fichero</a></li>
-<li><a class="reference internal" href="#paso-3-ver-estado">Paso 3: ver estado</a></li>
-<li><a class="reference internal" href="#paso-4-preparar-siguiente-commit">Paso 4: preparar siguiente commit</a></li>
-<li><a class="reference internal" href="#paso-5-hacer-el-commit">Paso 5: hacer el commit</a></li>
-<li><a class="reference internal" href="#paso-6-revisa-el-historial">Paso 6: revisa el historial</a></li>
+<li><a class="reference internal" href="#">Práctica entrenamiento 5: Git en local</a><ul>
+<li><a class="reference internal" href="#paso-1-escribe-un-programa-en-java">Paso 1: escribe un programa en Java</a></li>
+<li><a class="reference internal" href="#paso-2-anade-el-nuevo-fichero-al-area-stage">Paso 2: añade el nuevo fichero al área <em>stage</em></a></li>
+<li><a class="reference internal" href="#paso-3-compila-el-programa-anterior">Paso 3: compila el programa anterior</a></li>
+<li><a class="reference internal" href="#paso-4-fijate-en-el-estado-de-git">Paso 4: fíjate en el estado de git</a></li>
+<li><a class="reference internal" href="#paso-5-creando-y-configurando-gitignore">Paso 5: creando y configurando .gitignore</a></li>
+<li><a class="reference internal" href="#paso-6-anade-gitignore-al-area-stage">Paso 6: añade .gitignore al área <em>stage</em></a></li>
+<li><a class="reference internal" href="#paso-7-crea-el-nuevo-commit">Paso 7: crea el nuevo <em>commit</em></a></li>
+<li><a class="reference internal" href="#paso-8-ver-el-historial-de-cambios">Paso 8: ver el historial de cambios</a></li>
 </ul>
 </li>
 </ul>
