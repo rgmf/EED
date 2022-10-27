@@ -2,9 +2,12 @@
 <html class="no-js" lang="es">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="#" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Práctica entrenamiento 4: Git en local" href="git_local_entrenamiento4.html" /><link rel="prev" title="Práctica entrenamiento 3: Git en local" href="git_local_entrenamiento3.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/><title>Búsqueda - Control de versiones con git</title><link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
+        <title>Deshacer cosas - Control de versiones con git</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -135,7 +138,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -149,18 +152,18 @@
   
   <span class="sidebar-brand-text">Control de versiones con git</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Búsqueda name="q" aria-label="Búsqueda">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="git_intro.html">Git: primeros pasos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento1.html">Práctica entrenamiento 1: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento2.html">Práctica entrenamiento 2: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento3.html">Práctica entrenamiento 3: Git en local</a></li>
-<li class="toctree-l1"><a class="reference internal" href="git_commit_ammend.html">Deshacer cosas</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Deshacer cosas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento4.html">Práctica entrenamiento 4: Git en local</a></li>
 </ul>
 
@@ -189,31 +192,102 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
+          <section id="deshacer-cosas">
+<h1>Deshacer cosas<a class="headerlink" href="#deshacer-cosas" title="Enlazar permanentemente con este título">#</a></h1>
+<p>Puedes leer la documentación de esta parte <a class="reference external" href="https://git-scm.com/book/es/v2/Fundamentos-de-Git-Deshacer-Cosas#r_undoing">en la web oficial de Git</a>.</p>
+<section id="cambiar-ultimo-commit">
+<h2>Cambiar último <em>commit</em><a class="headerlink" href="#cambiar-ultimo-commit" title="Enlazar permanentemente con este título">#</a></h2>
+<p>En esta parte te explico cómo deshacer un par de cosas habituales del último <em>commit</em>.</p>
+<p>Suele ser común que tras hacer un <em>commit</em> te des cuenta que has olvidado meter algunos cambios o que el mensaje que has añadido no es del todo bueno o lo has añadido con errores que quieres modificar.</p>
+<p>En estos casos, hay una opción del comando <strong class="command">git commit</strong> que es <strong class="command">--amend</strong>.</p>
+<p>Así, cuando quieras cambiar el último <em>commit</em> ejecuta el comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git commit --amend
+</pre></div>
 </div>
-</noscript>
+<p>Este comando añadirá los cambios al último <em>commit</em> y abrirá el editor de textos configurado para Git para que puedas modificar el mensaje. Si no hay cambios nuevos en el área de preparación o <em>stage</em> entonces simplemente podrás cambiar el mensaje del último <em>commit</em>.</p>
+<div class="admonition important">
+<p class="admonition-title">Importante</p>
+<p>Esta opción, en ningún caso, crea un nuevo <em>commit</em>, tan solo sobreescribe el último <em>commit</em>.</p>
+</div>
+<p>Por ejemplo, si confirmas y luego te das cuenta que olvidaste preparar los cambios de un archivo que querías incluir en esta confirmación, puedes hacer lo siguiente:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git commit -m <span class="s2">&quot;Cualquier mensaje&quot;</span>
+<span class="gp">$ </span>git add fichero_olvidado
+<span class="gp">$ </span>git commit --amend
+</pre></div>
+</div>
+</section>
+<section id="deshacer-un-fichero-preparado">
+<h2>Deshacer un fichero preparado<a class="headerlink" href="#deshacer-un-fichero-preparado" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Aunque con el comando <strong class="command">git status</strong> puedes ver cómo hacerlo, no está de más recordarlo aquí.</p>
+<p>Esta acción se realiza cuando hay ficheros en el área de preparación o <em>stage</em> que no quieres confirmar en tu siguiente <em>commit</em>. Por ejemplo, supongamos que has cambiado dos archivos y que quieres confirmarlos como dos cambios separados, pero accidentalmente has escrito <strong class="command">git add .</strong> y has preparado ambos. ¿Cómo puedes sacar del área de preparación uno de ellos? El comando git status te recuerda cómo:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git add .
+<span class="gp">$ </span>git status
+<span class="go">En la rama main</span>
+<span class="go">Cambios a ser confirmados:</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git restore --staged &lt;archivo&gt;...&quot; para sacar del área de stage)</span>
+<span class="go">    modificados:     README.md</span>
+<span class="go">    modificados:     CONTRIBUTING.md</span>
+</pre></div>
+</div>
+<p>Como ves, el comando <strong class="command">git status</strong> te dice cómo sacar del área de prearación o <em>stage</em> un fichero. Imagina que quieres sacar de dicha área el fichero <code class="file docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code>, el comando a ejecutar será:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git restore --staged CONTRIBUTING.md
+</pre></div>
+</div>
+<p>Tras este comando, el fichero <code class="file docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code> está modificado pero no preparado para el siguiente <em>commit</em>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git status
+<span class="go">En la rama main</span>
+<span class="go">Cambios a ser confirmados:</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git restore --staged &lt;archivo&gt;...&quot; para sacar del área de stage)</span>
+<span class="go">    modificados:     a.txt</span>
 
-<div id="search-results"></div>
+<span class="go">Cambios no rastreados para el commit:</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git add &lt;archivo&gt;...&quot; para actualizar lo que será confirmado)</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git restore &lt;archivo&gt;...&quot; para descartar los cambios en el directorio de trabajo)</span>
+<span class="go">    modificados:     b.txt</span>
+</pre></div>
+</div>
+</section>
+<section id="deshacer-cambios-de-un-fichero">
+<h2>Deshacer cambios de un fichero<a class="headerlink" href="#deshacer-cambios-de-un-fichero" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Si quieres descartar los cambios de un fichero, de nuevo, el comando <strong class="command">git status</strong> te dirá cómo hacerlo.</p>
+<p>Primero lo tienes que sacar del área de preparación o <em>stage</em> y, a continuación, ejecutar el comando <strong class="command">git restore</strong>. Por ejemplo, imagina que quieres deshacer los cambios del fichero anterior <code class="file docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code>. Ejecuta el comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git restore CONTCONTRIBUTING.md
+</pre></div>
+</div>
+</section>
+</section>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="git_local_entrenamiento4.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Práctica entrenamiento 4: Git en local</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="git_local_entrenamiento3.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Práctica entrenamiento 3: Git en local</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -233,8 +307,29 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contenidos
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Deshacer cosas</a><ul>
+<li><a class="reference internal" href="#cambiar-ultimo-commit">Cambiar último <em>commit</em></a></li>
+<li><a class="reference internal" href="#deshacer-un-fichero-preparado">Deshacer un fichero preparado</a></li>
+<li><a class="reference internal" href="#deshacer-cambios-de-un-fichero">Deshacer cambios de un fichero</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -244,10 +339,6 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
-    <script src="_static/tabs.js"></script>
     <script src="_static/translations.js"></script>
-    
-<script src="_static/searchtools.js"></script>
-<script src="_static/language_data.js"></script>
-<script src="searchindex.js"></script></body>
+    </body>
 </html>

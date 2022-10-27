@@ -21,7 +21,7 @@ Crea dentro de la carpeta :file:`gitrain` la siguiente jerarquía de directorios
 
 Paso 2: descargar imágenes
 ==========================
-Descarga la siguiente imagen y guárdala en la carpeta :file:`img`:
+Descarga la siguiente imagen y guárdala en la carpeta :file:`jpg`:
 
 .. figure:: ./img/java_logo.jpg
     :width: 40%

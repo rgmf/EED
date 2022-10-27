@@ -163,6 +163,8 @@
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento1.html">Práctica entrenamiento 1: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento2.html">Práctica entrenamiento 2: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento3.html">Práctica entrenamiento 3: Git en local</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_commit_ammend.html">Deshacer cosas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento4.html">Práctica entrenamiento 4: Git en local</a></li>
 </ul>
 
 </div>
@@ -233,7 +235,7 @@
 <p>Antes de usar por primera vez Git tienes que personalizar tu entorno:</p>
 <p><strong>Tu identidad</strong>: tienes que establecer tu nombre y tu dirección de correo electrónico:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git config --global user.name <span class="s2">&quot;Román Martínez&quot;</span>
-<span class="gp">$ </span>git config --global user.email rgmf@riseup.net
+<span class="gp">$ </span>git config --global user.email <span class="s2">&quot;rgmf@riseup.net&quot;</span>
 </pre></div>
 </div>
 <p><strong>Tu editor</strong>: será el editor que se abra cuando sea necesario:</p>
@@ -248,39 +250,25 @@
 <p class="admonition-title">Importante</p>
 <p>En este módulo SIEMPRE vamos a usar el <strong>main</strong> como nombre de la rama principal de todos los proyectos con Git.</p>
 </div>
+<p>Para conocer la configuración de Git puedes usar el siguiente comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git config --list
+</pre></div>
+</div>
 </section>
 <section id="comandos-basicos-de-git">
 <h2>Comandos básicos de Git<a class="headerlink" href="#comandos-basicos-de-git" title="Enlazar permanentemente con este título">#</a></h2>
+<p>En este apartado tienes una selección de opciones con los que trabajar en un repositorio local con Git.</p>
 <section id="comenzar-un-proyecto">
 <h3>Comenzar un proyecto<a class="headerlink" href="#comenzar-un-proyecto" title="Enlazar permanentemente con este título">#</a></h3>
-<p>Puedes obtener o comenzar un proyecto Git de dos maneras:</p>
-<p><strong>Crear un repositorio local</strong>: entra en una carpeta y ejecuta el siguiente comando:</p>
+<p>Para iniciar un repositorio de Git, es decir, poner un proyecto bajo el control de Git, tienes que entrar en la carpeta de tu proyecto y ejecutar el siguiente comando:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git init
 </pre></div>
 </div>
-<p><strong>Clonar un repositorio remoto</strong>: con el siguiente comando obtendrás una copia local de un repositorio remoto:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git clone git@github.com:rgmf/dwes-tema00.git
-</pre></div>
-</div>
-<p>En ambos casos, en la carpeta del proyecto, se crea un directorio llamado <code class="file docutils literal notranslate"><span class="pre">.git</span></code> donde está toda la información que necesita el sistema Git para la gestión de los ficheros del repositorio.</p>
-</section>
-<section id="anadir-ficheros-nuevos">
-<h3>Añadir ficheros nuevos<a class="headerlink" href="#anadir-ficheros-nuevos" title="Enlazar permanentemente con este título">#</a></h3>
-<p>Cuando creas un nuevo fichero en tu repositorio local, tienes que añadirlo al seguimiento de Git. Se usa el comando <strong class="command">git add</strong> indicando, mediante una ruta relativa, el fichero a añadir. Imagina que has creado un fichero llamado <code class="file docutils literal notranslate"><span class="pre">HolaMundo.java</span></code> y lo quieres añadir al seguimiento. En este caso tienes que ejecutar el siguiente comando:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git add HolaMundo.java
-</pre></div>
-</div>
-</section>
-<section id="eliminar-ficheros">
-<h3>Eliminar ficheros<a class="headerlink" href="#eliminar-ficheros" title="Enlazar permanentemente con este título">#</a></h3>
-<p>Se usa el comando <strong class="command">git rm</strong> junto a la ruta relativa al fichero que se quiere sacar del repositorio. Por ejemplo, imagina que quieres eliminar un fichero llamado <code class="file docutils literal notranslate"><span class="pre">HolaMundo.java</span></code> que está en la carpeta <code class="file docutils literal notranslate"><span class="pre">fuentes</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git rm fuentes/HolaMundo.java
-</pre></div>
-</div>
+<p>En la carpeta del proyecto, se crea un directorio llamado <code class="file docutils literal notranslate"><span class="pre">.git</span></code> donde está toda la información que necesita el sistema Git para la gestión de los ficheros del repositorio.</p>
 </section>
 <section id="revisar-el-estado-del-repositorio-local">
 <h3>Revisar el estado del repositorio local<a class="headerlink" href="#revisar-el-estado-del-repositorio-local" title="Enlazar permanentemente con este título">#</a></h3>
-<p>En cualquier momento puedes revisar el estado del repositorio: qué ficheros hay confirmados, los ficheros que hay modificados, los que han sido eliminados, los que se han añadido, etc, con el domando:</p>
+<p>En cualquier momento puedes revisar el estado del repositorio: qué ficheros hay confirmados, los ficheros que hay modificados, los que han sido eliminados, los que se han añadido, etc, con el comando:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git status
 </pre></div>
 </div>
@@ -291,31 +279,25 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git log
 </pre></div>
 </div>
-<p>Verás todos los commit que se han hecho entre otras cosas.</p>
+<p>Verás todos los commit que se han hecho, es decir, todos las instantáneas con información como la persona que hizo el commit, el día y la hora, así como el SHA-1 del commit.</p>
+</section>
+<section id="anadir-cambios-al-estado-stage">
+<h3>Añadir cambios al estado stage<a class="headerlink" href="#anadir-cambios-al-estado-stage" title="Enlazar permanentemente con este título">#</a></h3>
+<p>Ya sea porque has creado, eliminado o modificado ficheros, los cambios realizados tienen que ser añadidos al estado de <em>stage</em> (seguimiento) para poder confirmarlos después con un <em>commit</em>.</p>
+<p>En estos casos, se usa el comando <strong class="command">git add</strong> indicando, mediante una ruta relativa, los ficheros que se van a añadir al estado <em>stage</em> (al seguimiento).</p>
+<p>Por ejemplo, imagina que has creado un fichero llamado <code class="file docutils literal notranslate"><span class="pre">HolaMundo.java</span></code> y lo quieres añadir al seguimiento. En este caso tienes que ejecutar el siguiente comando:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git add HolaMundo.java
+</pre></div>
+</div>
 </section>
 <section id="confirmar-cambios-commit">
 <h3>Confirmar cambios (<em>commit</em>)<a class="headerlink" href="#confirmar-cambios-commit" title="Enlazar permanentemente con este título">#</a></h3>
-<p>Una vez quieras confirmar los cambios de tu repositorio local tienes que ejecutar un <strong class="command">git commit</strong>. Cuando hablo de cambios me refiero a modificaciones de ficheros existentes, ficheros nuevos y ficheros borrados. Cada commit se acompaña de un mensaje como ves en el ejemplo siguiente:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git commit -am <span class="s2">&quot;Cambios realizados: este es el mensaje de esta confirmación o commit, escribe lo que quieras&quot;</span>
+<p>Una vez quieras confirmar los cambios de tu repositorio local tienes que ejecutar un <strong class="command">git commit</strong>.</p>
+<p>Todos los cambios que estén en el <em>stage</em> (seguimiento) van a ser confirmados. Se debe incluir un mensaje corto que describa los cambios que van a ser confirmados. Un ejemplo:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git commit -m <span class="s2">&quot;Cambios realizados: este es el mensaje de esta confirmación o commit, escribe lo que quieras.&quot;</span>
 </pre></div>
 </div>
-<p>Con la opción <strong class="command">-a</strong> nos ahorramos el paso de tener que hacer el <em>staged</em> para los ficheros que se tienen que añadir.</p>
-</section>
-<section id="subir-cambios-al-repositorio-remoto">
-<h3>Subir cambios al repositorio remoto<a class="headerlink" href="#subir-cambios-al-repositorio-remoto" title="Enlazar permanentemente con este título">#</a></h3>
-<p>Cuando tienes un proyecto que quieres compartir, debes enviarlo a un servidor. El comando para hacerlo es simple: <strong class="command">push [nombre-remoto] [nombre-rama]</strong>. Donde:</p>
-<ul class="simple">
-<li><p>nombre-remoto: suele ser <em>origin</em>.</p></li>
-<li><p>nombre-rama: la rama donde quieres subirlo.</p></li>
-</ul>
-<p>Por ejemplo, el siguiente <em>push</em> lo hace al servidor <em>origin</em> y rama <em>main</em>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git push origin main
-</pre></div>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Importante</p>
-<p>Para poder subir cambios a un repositorio remoto necesitas permisos de escritura.</p>
-</div>
+<p>Si tu mensaje va a ser un poco más largo, puedes ejecutar el commit tal que así: <strong class="command">git commit</strong>. En este caso Git abrirá el editor de textos que configuraste anteriormente para que puedas escribir un mensaje de varias líneas.</p>
 </section>
 </section>
 </section>
@@ -385,12 +367,10 @@
 <li><a class="reference internal" href="#primeros-pasos-con-git-configuracion">Primeros pasos con Git: configuración</a></li>
 <li><a class="reference internal" href="#comandos-basicos-de-git">Comandos básicos de Git</a><ul>
 <li><a class="reference internal" href="#comenzar-un-proyecto">Comenzar un proyecto</a></li>
-<li><a class="reference internal" href="#anadir-ficheros-nuevos">Añadir ficheros nuevos</a></li>
-<li><a class="reference internal" href="#eliminar-ficheros">Eliminar ficheros</a></li>
 <li><a class="reference internal" href="#revisar-el-estado-del-repositorio-local">Revisar el estado del repositorio local</a></li>
 <li><a class="reference internal" href="#ver-el-historial">Ver el historial</a></li>
+<li><a class="reference internal" href="#anadir-cambios-al-estado-stage">Añadir cambios al estado stage</a></li>
 <li><a class="reference internal" href="#confirmar-cambios-commit">Confirmar cambios (<em>commit</em>)</a></li>
-<li><a class="reference internal" href="#subir-cambios-al-repositorio-remoto">Subir cambios al repositorio remoto</a></li>
 </ul>
 </li>
 </ul>

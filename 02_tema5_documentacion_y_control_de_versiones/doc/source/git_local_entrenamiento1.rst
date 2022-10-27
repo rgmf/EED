@@ -92,11 +92,11 @@ Verás un mensaje como el siguiente:
 
 Este mensaje nos indica que **hay un fichero nuevo sin seguimiento** por Git, el fichero que acabamos de crear :file:`README.md`.
 
-En el siguiente paso te explico qué hacer para añadir estos ficheros al seguimiento de Git.
+En el siguiente paso te explico qué hacer para añadir estos ficheros al seguimiento de Git, es decir, al estado *stage*.
 
 Paso 5: añadir ficheros nuevos al repositorio (add)
 ===================================================
-Añade el fichero sin seguimiento :file:`README.md` al repositorio local de Git ejecutando este comando:
+Añade el fichero sin seguimiento (fuera de *stage*) :file:`README.md` al repositorio local de Git ejecutando este comando:
 
 .. code-block:: console
 
@@ -128,7 +128,7 @@ Verás la siguiente información:
     (usa "git rm --cached <archivo>..." para sacar del área de stage)
         nuevos archivos: README.md
 
-Como ves, el nuevo fichero :file:`README.md` ya está dentro del siguimiento de Git pero no está confirmado.
+Como ves, el nuevo fichero :file:`README.md` ya está dentro del siguimiento de Git (en el *stage*) pero no está confirmado (no esta *committed*).
 
 En el siguiente paso te muestro cómo confirmar cambios.
 
@@ -144,7 +144,7 @@ Y se abrirá el editor de textos que configuraste al principio para añadir un m
 
 En este caso podrías escribir un mensaje como el siguiente: `He añadido un fichero README a mi proyecto.`.
 
-Una pequeño atajo, cuando el mensaje va a ser tan corto como este es ejecutar el comando :command:`git commit` con la opción :command:`-m` seguido del mensaje entre comillas, tal que así:
+Un pequeño atajo, cuando el mensaje va a ser tan corto como este es ejecutar el comando :command:`git commit` con la opción :command:`-m` seguido del mensaje entre comillas, tal que así:
 
 .. code-block:: console
 

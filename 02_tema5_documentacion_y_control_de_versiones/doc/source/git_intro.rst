@@ -50,7 +50,7 @@ Antes de usar por primera vez Git tienes que personalizar tu entorno:
 .. code-block:: console
 
     $ git config --global user.name "Román Martínez"
-    $ git config --global user.email rgmf@riseup.net
+    $ git config --global user.email "rgmf@riseup.net"
 
 **Tu editor**: será el editor que se abra cuando sea necesario:
 
@@ -67,46 +67,30 @@ Antes de usar por primera vez Git tienes que personalizar tu entorno:
 .. important:: 
     En este módulo SIEMPRE vamos a usar el **main** como nombre de la rama principal de todos los proyectos con Git.
 
+Para conocer la configuración de Git puedes usar el siguiente comando:
+
+.. code-block:: console
+
+    $ git config --list
+
 Comandos básicos de Git
 =======================
 
+En este apartado tienes una selección de opciones con los que trabajar en un repositorio local con Git.
+
 Comenzar un proyecto
 ---------------------
-Puedes obtener o comenzar un proyecto Git de dos maneras:
-
-**Crear un repositorio local**: entra en una carpeta y ejecuta el siguiente comando:
+Para iniciar un repositorio de Git, es decir, poner un proyecto bajo el control de Git, tienes que entrar en la carpeta de tu proyecto y ejecutar el siguiente comando:
 
 .. code-block:: console
 
     $ git init
 
-**Clonar un repositorio remoto**: con el siguiente comando obtendrás una copia local de un repositorio remoto:
-
-.. code-block:: console
-
-    $ git clone git@github.com:rgmf/dwes-tema00.git
-
-En ambos casos, en la carpeta del proyecto, se crea un directorio llamado :file:`.git` donde está toda la información que necesita el sistema Git para la gestión de los ficheros del repositorio.
-
-Añadir ficheros nuevos
-----------------------
-Cuando creas un nuevo fichero en tu repositorio local, tienes que añadirlo al seguimiento de Git. Se usa el comando :command:`git add` indicando, mediante una ruta relativa, el fichero a añadir. Imagina que has creado un fichero llamado :file:`HolaMundo.java` y lo quieres añadir al seguimiento. En este caso tienes que ejecutar el siguiente comando:
-
-.. code-block:: console
-
-    $ git add HolaMundo.java
-
-Eliminar ficheros
------------------
-Se usa el comando :command:`git rm` junto a la ruta relativa al fichero que se quiere sacar del repositorio. Por ejemplo, imagina que quieres eliminar un fichero llamado :file:`HolaMundo.java` que está en la carpeta :file:`fuentes`:
-
-.. code-block:: console
-
-    $ git rm fuentes/HolaMundo.java
+En la carpeta del proyecto, se crea un directorio llamado :file:`.git` donde está toda la información que necesita el sistema Git para la gestión de los ficheros del repositorio.
 
 Revisar el estado del repositorio local
 ---------------------------------------
-En cualquier momento puedes revisar el estado del repositorio: qué ficheros hay confirmados, los ficheros que hay modificados, los que han sido eliminados, los que se han añadido, etc, con el domando:
+En cualquier momento puedes revisar el estado del repositorio: qué ficheros hay confirmados, los ficheros que hay modificados, los que han sido eliminados, los que se han añadido, etc, con el comando:
 
 .. code-block:: console
 
@@ -120,30 +104,28 @@ Se usa el comando siguiente:
 
     $ git log
 
-Verás todos los commit que se han hecho entre otras cosas.
+Verás todos los commit que se han hecho, es decir, todos las instantáneas con información como la persona que hizo el commit, el día y la hora, así como el SHA-1 del commit.
+
+Añadir cambios al estado stage
+------------------------------
+Ya sea porque has creado, eliminado o modificado ficheros, los cambios realizados tienen que ser añadidos al estado de *stage* (seguimiento) para poder confirmarlos después con un *commit*.
+
+En estos casos, se usa el comando :command:`git add` indicando, mediante una ruta relativa, los ficheros que se van a añadir al estado *stage* (al seguimiento).
+
+Por ejemplo, imagina que has creado un fichero llamado :file:`HolaMundo.java` y lo quieres añadir al seguimiento. En este caso tienes que ejecutar el siguiente comando:
+
+.. code-block:: console
+
+    $ git add HolaMundo.java
 
 Confirmar cambios (*commit*)
 ----------------------------
-Una vez quieras confirmar los cambios de tu repositorio local tienes que ejecutar un :command:`git commit`. Cuando hablo de cambios me refiero a modificaciones de ficheros existentes, ficheros nuevos y ficheros borrados. Cada commit se acompaña de un mensaje como ves en el ejemplo siguiente:
+Una vez quieras confirmar los cambios de tu repositorio local tienes que ejecutar un :command:`git commit`.
+
+Todos los cambios que estén en el *stage* (seguimiento) van a ser confirmados. Se debe incluir un mensaje corto que describa los cambios que van a ser confirmados. Un ejemplo:
 
 .. code-block:: console
 
-    $ git commit -am "Cambios realizados: este es el mensaje de esta confirmación o commit, escribe lo que quieras"
+    $ git commit -m "Cambios realizados: este es el mensaje de esta confirmación o commit, escribe lo que quieras."
 
-Con la opción :command:`-a` nos ahorramos el paso de tener que hacer el *staged* para los ficheros que se tienen que añadir.
-
-Subir cambios al repositorio remoto
------------------------------------
-Cuando tienes un proyecto que quieres compartir, debes enviarlo a un servidor. El comando para hacerlo es simple: :command:`push [nombre-remoto] [nombre-rama]`. Donde:
-
-- nombre-remoto: suele ser *origin*.
-- nombre-rama: la rama donde quieres subirlo.
-
-Por ejemplo, el siguiente *push* lo hace al servidor *origin* y rama *main*:
-
-.. code-block:: console
-
-    $ git push origin main
-
-.. important:: 
-    Para poder subir cambios a un repositorio remoto necesitas permisos de escritura.
+Si tu mensaje va a ser un poco más largo, puedes ejecutar el commit tal que así: :command:`git commit`. En este caso Git abrirá el editor de textos que configuraste anteriormente para que puedas escribir un mensaje de varias líneas.

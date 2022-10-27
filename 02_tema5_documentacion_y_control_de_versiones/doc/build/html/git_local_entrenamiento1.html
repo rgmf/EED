@@ -163,6 +163,8 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Práctica entrenamiento 1: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento2.html">Práctica entrenamiento 2: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento3.html">Práctica entrenamiento 3: Git en local</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_commit_ammend.html">Deshacer cosas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento4.html">Práctica entrenamiento 4: Git en local</a></li>
 </ul>
 
 </div>
@@ -278,11 +280,11 @@ Git es un software de gestión de versiones muy utilizado en el mundo del desarr
 </pre></div>
 </div>
 <p>Este mensaje nos indica que <strong>hay un fichero nuevo sin seguimiento</strong> por Git, el fichero que acabamos de crear <code class="file docutils literal notranslate"><span class="pre">README.md</span></code>.</p>
-<p>En el siguiente paso te explico qué hacer para añadir estos ficheros al seguimiento de Git.</p>
+<p>En el siguiente paso te explico qué hacer para añadir estos ficheros al seguimiento de Git, es decir, al estado <em>stage</em>.</p>
 </section>
 <section id="paso-5-anadir-ficheros-nuevos-al-repositorio-add">
 <h2>Paso 5: añadir ficheros nuevos al repositorio (add)<a class="headerlink" href="#paso-5-anadir-ficheros-nuevos-al-repositorio-add" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Añade el fichero sin seguimiento <code class="file docutils literal notranslate"><span class="pre">README.md</span></code> al repositorio local de Git ejecutando este comando:</p>
+<p>Añade el fichero sin seguimiento (fuera de <em>stage</em>) <code class="file docutils literal notranslate"><span class="pre">README.md</span></code> al repositorio local de Git ejecutando este comando:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git add README.md
 </pre></div>
 </div>
@@ -307,7 +309,7 @@ Git es un software de gestión de versiones muy utilizado en el mundo del desarr
 <span class="go">    nuevos archivos: README.md</span>
 </pre></div>
 </div>
-<p>Como ves, el nuevo fichero <code class="file docutils literal notranslate"><span class="pre">README.md</span></code> ya está dentro del siguimiento de Git pero no está confirmado.</p>
+<p>Como ves, el nuevo fichero <code class="file docutils literal notranslate"><span class="pre">README.md</span></code> ya está dentro del siguimiento de Git (en el <em>stage</em>) pero no está confirmado (no esta <em>committed</em>).</p>
 <p>En el siguiente paso te muestro cómo confirmar cambios.</p>
 </section>
 <section id="paso-7-confirmar-cambios-commit">
@@ -318,7 +320,7 @@ Git es un software de gestión de versiones muy utilizado en el mundo del desarr
 </div>
 <p>Y se abrirá el editor de textos que configuraste al principio para añadir un mensaje a dicha instantánea. Es <strong>importante</strong> que escribas mensajes en cada <em>commit</em> indicando brevemente qué cambios se han llevado a cabo desde la última instantánea o <em>commit</em>.</p>
 <p>En este caso podrías escribir un mensaje como el siguiente: <cite>He añadido un fichero README a mi proyecto.</cite>.</p>
-<p>Una pequeño atajo, cuando el mensaje va a ser tan corto como este es ejecutar el comando <strong class="command">git commit</strong> con la opción <strong class="command">-m</strong> seguido del mensaje entre comillas, tal que así:</p>
+<p>Un pequeño atajo, cuando el mensaje va a ser tan corto como este es ejecutar el comando <strong class="command">git commit</strong> con la opción <strong class="command">-m</strong> seguido del mensaje entre comillas, tal que así:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git commit -m <span class="s2">&quot;He añadido un fichero README a mi proyecto.&quot;</span>
 </pre></div>
 </div>

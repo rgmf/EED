@@ -4,175 +4,110 @@ En esta práctica continuarás con el proyecto :file:`gitrain` que iniciaste en 
 
 Recuerda hacer :command:`git status` y :command:`git log` cuando lo necesites.
 
-Las **novedades** en esta parte son dos:
+Las **novedades** en esta parte son:
 
-- Aprenderás a eliminar ficheros del repositorio de Git.
-- Y, además, vas a ver cómo volver a un *commit* anterior.
+- Aprenderás a modificar ficheros.
+- Aprenderás a eliminar ficheros.
+- Aprenderás la diferencia entre ficheros no **rastreados** y ficheros sin **seguimiento**.
 
-Paso 1: eliminar fichero
+Paso 1: modificaciones en el repositorio
+========================================
+Abre el fichero :file:`java.txt` y añade, al final del fichero, el siguiente texto::
+
+    El lenguaje de programación Java fue desarrollado originalmente por James Gosling, 
+    de Sun Microsystems (constituida en 1983 y posteriormente adquirida el 27 de enero
+    de 2010 por la compañía Oracle)
+
+Paso 2: eliminar fichero
 ========================
-Elimina el fichero :file:`java.txt` y ejecuta un :command:`git status`. Verás la siguiente información:
+Elimina el fichero :file:`c.txt`.
+
+Paso 3: añadir un nuevo fichero
+===============================
+Crea un nuevo fichero dentro de :file:`src/txt/` con el nombre :file:`python.txt` y el siguiente texto::
+
+    Python is a high-level, general-purpose programming language.
+    Its design philosophy emphasizes code readability with the use 
+    of significant indentation.
+
+Paso 3: ver estado
+==================
+Si ejecutas un :command:`git status` verás la siguiente información:
 
 .. code-block:: console
 
     En la rama main
     Cambios no rastreados para el commit:
-        (usa "git add/rm <archivo>..." para actualizar a lo que se le va a hacer commit)
-        (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
-            borrados:        src/txt/java.txt
+    (usa "git add/rm <archivo>..." para actualizar a lo que se le va a hacer commit)
+    (usa "git restore <archivo>..." para descartar los cambios en el directorio de trabajo)
+        borrados:        src/txt/c.txt
+        modificados:     src/txt/java.txt
+
+    Archivos sin seguimiento:
+    (usa "git add <archivo>..." para incluirlo a lo que se será confirmado)
+        src/txt/python.txt
 
     sin cambios agregados al commit (usa "git add" y/o "git commit -a")
 
-Como ves nos indica que se ha borrado el fichero :file:`src/txt/java.txt` pero este cambio no tiene seguimiento en Git todavía. Tienes que hacer un :command:`git add` o :command:`git rm` como sigue:
+Como ves, aparecen **cambios no rastreados** y **archivos sin seguimiento**. ¿Qué diferencia hay?
 
-.. code-block:: console
+- Los cambios **no rastreados** son cambios sobre ficheros que ya existían en el último *commit* que no están en el área de preparación o *stage*.
+- Los archivos **sin seguimiento** son archivos que no están en el último *commit* (son nuevos) y que no se han añadido al área de preparación o *stage*.
 
-    $ git rm src/txt/java.txt
+En general hay tres cambios:
 
-Ahora sí, si ejecutas de nuevo el :command:`git status` verás que el fichero :file:`java.txt` ha sido eliminado del repositorio de Git.
+- Eliminado el fichero :file:`src/txt/c.txt`,
+- Modificado el fichero :file:`src/txt/java.txt` y
+- Nuevo fichero :file:`src/txt/python.txt`.
 
-Finalmente, ya sabes, tienes que confirmar el cambio con un *commit*:
+De momento, estos cambios no están preparados para el siguiente *commit*, es decir, no están en el stado *stage*.
 
-.. code-block:: console
-
-    $ git commit -m "Elimando el fichero java.txt."
-
-Paso 2: volver atrás, a un commit
+Paso 4: preparar siguiente commit
 =================================
-Si ejecutas el comando :command:`log` de Git verás el siguiente histórico de *commits*:
+Vamos a preparar el siguiente *commit* (instantánea) con todos los cambios realizados. Para ello, hay que añadir todos los cambios anteriores al área de preparación o *stage*. ¿Cómo? con el comando :command:`git add` como ves a continuación:
 
 .. code-block:: console
 
-    commit 3e38219ddfdb09abd0a03a9d0e63eb24390a0e00 (HEAD -> main)
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 19:01:36 2022 +0200
+    $ git add src/txt/c.txt src/txt/java.txt src/txt/python.txt
 
-        Elimando el fichero java.txt.
+Ahora, si ejecutas el comando :command:`git status` verás la siguiente información:
 
-    commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5
+.. code-block:: console
+
+    En la rama main
+    Cambios a ser confirmados:
+    (usa "git restore --staged <archivo>..." para sacar del área de stage)
+        borrados:        src/txt/c.txt
+        modificados:     src/txt/java.txt
+        nuevos archivos: src/txt/python.txt
+
+Como ves, ahora sí están preparados todos los cambios para realizar el *commit*, es decir, la instantánea.
+
+Paso 5: hacer el commit
+=======================
+Realiza el *commit* añadiendo el siguiente mensaje: `Quitado C, añadido Python y ampliado Java.`
+
+Paso 6: revisa el historial
+===========================
+Si echas un vistazo al historial deberías ver los siguientes *commits*:
+
+.. code-block:: console
+
+    commit 8f8b69a5856e9ddbb3e4ab7aca24aec5bef1be27 (HEAD -> main)
     Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 18:08:44 2022 +0200
+    Date:   Thu Oct 27 15:13:02 2022 +0200
+
+        Quitado C, añadido Python y ampliado Java.
+
+    commit c0841983944a4fd9edfc0f6316af76e84327c7f6
+    Author: Román Martínez <rgmf@riseup.net>
+    Date:   Thu Oct 13 13:40:34 2022 +0200
 
         Añadidos ficheros de texto con información sobre C y Java.
 
-    commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad
+    commit 4cd4a901e559b54ff2953296a71a75570bb8cae2
     Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 18:02:36 2022 +0200
-
-        Logotipos de Java añadidos al proyecto.
-
-    commit c7afc494c637463732d56711e9cc0da5bd274127
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Thu Sep 22 17:44:35 2022 +0200
-
-        He añadido un fichero README a mi proyecto.
-
-Imagina que quieres volver al commit **ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5**, es decir, al punto en el que tenías el fichero :file:`java.txt` en el repositorio, porque te has arrepentido y quieres recuperar dicho fichero.
-
-Existen dos posibilidades:
-
-Primera opción:
----------------
-Si solo quieres recuperar el fichero borrado bastaría con ejecutar el comando:
-
-.. code-block:: console
-    
-    $ git checkout ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5 .
-
-No olvides el punto final.
-
-Y, por último, tienes que realizar un commit con la opción **-a** para añadir los nuevos ficheros (el eliminado):
-
-.. code-block:: console
-
-    $ git commit -am "Restaurado desde el commit."
-
-
-Si haces un :command:`git log` verás que hay un nuevo commit, el que acabamos de crear:
-
-.. code-block:: console
-
-    commit 5b2d351658c4b47c874400c0332f35edd186cbf3 (HEAD -> main)
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 19:15:53 2022 +0200
-
-        Restaurado desde el commit.
-
-    commit 3e38219ddfdb09abd0a03a9d0e63eb24390a0e00
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 19:01:36 2022 +0200
-
-        Elimando el fichero java.txt.
-
-    commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 18:08:44 2022 +0200
-
-        Añadidos ficheros de texto con información sobre C y Java.
-
-    commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 18:02:36 2022 +0200
-
-        Logotipos de Java añadidos al proyecto.
-
-    commit c7afc494c637463732d56711e9cc0da5bd274127
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Thu Sep 22 17:44:35 2022 +0200
-
-        He añadido un fichero README a mi proyecto.
-
-Segunda opción:
----------------
-En este caso sería la mejor opción de todas. Hacer un **hard reset** al commit al que quieres volver.
-
-Recordemos el historial desde el que partimos:
-
-.. code-block:: console
-
-    commit 3e38219ddfdb09abd0a03a9d0e63eb24390a0e00 (HEAD -> main)
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 19:01:36 2022 +0200
-
-        Elimando el fichero java.txt.
-
-    commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 18:08:44 2022 +0200
-
-        Añadidos ficheros de texto con información sobre C y Java.
-
-    commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 18:02:36 2022 +0200
-
-        Logotipos de Java añadidos al proyecto.
-
-    commit c7afc494c637463732d56711e9cc0da5bd274127
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Thu Sep 22 17:44:35 2022 +0200
-
-        He añadido un fichero README a mi proyecto.
-
-Queremos volver al *commit* identificado por **ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5**. Pues bien, para volver a él, basta con ejecutar el siguiente comando:
-
-.. code-block:: console
-
-    $ git reset --hard ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5
-
-Por último, si haces un :command:`git log` para ver el historial, lo que vas a ver es que hemos vuelto al commit anterior, deshaciendo todo lo hecho en el último commit, en el que borramos el fichero :file:`java.txt`:
-
-.. code-block:: console
-
-    commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5 (HEAD -> main)
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 18:08:44 2022 +0200
-
-        Añadidos ficheros de texto con información sobre C y Java.
-
-    commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad
-    Author: Román Martínez <rgmf@riseup.net>
-    Date:   Sun Sep 25 18:02:36 2022 +0200
+    Date:   Thu Oct 13 13:39:28 2022 +0200
 
         Logotipos de Java añadidos al proyecto.
 

@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="prev" title="Práctica entrenamiento 2: Git en local" href="git_local_entrenamiento2.html" />
+<link rel="index" title="Índice" href="genindex.html" /><link rel="search" title="Búsqueda" href="search.html" /><link rel="next" title="Deshacer cosas" href="git_commit_ammend.html" /><link rel="prev" title="Práctica entrenamiento 2: Git en local" href="git_local_entrenamiento2.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
         <title>Práctica entrenamiento 3: Git en local - Control de versiones con git</title>
@@ -163,6 +163,8 @@
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento1.html">Práctica entrenamiento 1: Git en local</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento2.html">Práctica entrenamiento 2: Git en local</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Práctica entrenamiento 3: Git en local</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_commit_ammend.html">Deshacer cosas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git_local_entrenamiento4.html">Práctica entrenamiento 4: Git en local</a></li>
 </ul>
 
 </div>
@@ -200,161 +202,113 @@
 <h1>Práctica entrenamiento 3: Git en local<a class="headerlink" href="#practica-entrenamiento-3-git-en-local" title="Enlazar permanentemente con este título">#</a></h1>
 <p>En esta práctica continuarás con el proyecto <code class="file docutils literal notranslate"><span class="pre">gitrain</span></code> que iniciaste en las prácticas de entrenamiento anteriores. Si no la tienes completada o quieres asegurarte que partes de donde lo debiste dejar, puedes descargar la segunda parte aquí: <a class="reference external" href="_static/gitrain2.zip">segunda parte del proyecto gitrain</a>.</p>
 <p>Recuerda hacer <strong class="command">git status</strong> y <strong class="command">git log</strong> cuando lo necesites.</p>
-<p>Las <strong>novedades</strong> en esta parte son dos:</p>
+<p>Las <strong>novedades</strong> en esta parte son:</p>
 <ul class="simple">
-<li><p>Aprenderás a eliminar ficheros del repositorio de Git.</p></li>
-<li><p>Y, además, vas a ver cómo volver a un <em>commit</em> anterior.</p></li>
+<li><p>Aprenderás a modificar ficheros.</p></li>
+<li><p>Aprenderás a eliminar ficheros.</p></li>
+<li><p>Aprenderás la diferencia entre ficheros no <strong>rastreados</strong> y ficheros sin <strong>seguimiento</strong>.</p></li>
 </ul>
-<section id="paso-1-eliminar-fichero">
-<h2>Paso 1: eliminar fichero<a class="headerlink" href="#paso-1-eliminar-fichero" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Elimina el fichero <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code> y ejecuta un <strong class="command">git status</strong>. Verás la siguiente información:</p>
+<section id="paso-1-modificaciones-en-el-repositorio">
+<h2>Paso 1: modificaciones en el repositorio<a class="headerlink" href="#paso-1-modificaciones-en-el-repositorio" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Abre el fichero <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code> y añade, al final del fichero, el siguiente texto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">El</span> <span class="n">lenguaje</span> <span class="n">de</span> <span class="n">programación</span> <span class="n">Java</span> <span class="n">fue</span> <span class="n">desarrollado</span> <span class="n">originalmente</span> <span class="n">por</span> <span class="n">James</span> <span class="n">Gosling</span><span class="p">,</span>
+<span class="n">de</span> <span class="n">Sun</span> <span class="n">Microsystems</span> <span class="p">(</span><span class="n">constituida</span> <span class="n">en</span> <span class="mi">1983</span> <span class="n">y</span> <span class="n">posteriormente</span> <span class="n">adquirida</span> <span class="n">el</span> <span class="mi">27</span> <span class="n">de</span> <span class="n">enero</span>
+<span class="n">de</span> <span class="mi">2010</span> <span class="n">por</span> <span class="n">la</span> <span class="n">compañía</span> <span class="n">Oracle</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="paso-2-eliminar-fichero">
+<h2>Paso 2: eliminar fichero<a class="headerlink" href="#paso-2-eliminar-fichero" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Elimina el fichero <code class="file docutils literal notranslate"><span class="pre">c.txt</span></code>.</p>
+</section>
+<section id="paso-3-anadir-un-nuevo-fichero">
+<h2>Paso 3: añadir un nuevo fichero<a class="headerlink" href="#paso-3-anadir-un-nuevo-fichero" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Crea un nuevo fichero dentro de <code class="file docutils literal notranslate"><span class="pre">src/txt/</span></code> con el nombre <code class="file docutils literal notranslate"><span class="pre">python.txt</span></code> y el siguiente texto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">high</span><span class="o">-</span><span class="n">level</span><span class="p">,</span> <span class="n">general</span><span class="o">-</span><span class="n">purpose</span> <span class="n">programming</span> <span class="n">language</span><span class="o">.</span>
+<span class="n">Its</span> <span class="n">design</span> <span class="n">philosophy</span> <span class="n">emphasizes</span> <span class="n">code</span> <span class="n">readability</span> <span class="k">with</span> <span class="n">the</span> <span class="n">use</span>
+<span class="n">of</span> <span class="n">significant</span> <span class="n">indentation</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="paso-3-ver-estado">
+<h2>Paso 3: ver estado<a class="headerlink" href="#paso-3-ver-estado" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Si ejecutas un <strong class="command">git status</strong> verás la siguiente información:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">En la rama main</span>
 <span class="go">Cambios no rastreados para el commit:</span>
-<span class="go">    (usa &quot;git add/rm &lt;archivo&gt;...&quot; para actualizar a lo que se le va a hacer commit)</span>
-<span class="go">    (usa &quot;git restore &lt;archivo&gt;...&quot; para descartar los cambios en el directorio de trabajo)</span>
-<span class="go">        borrados:        src/txt/java.txt</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git add/rm &lt;archivo&gt;...&quot; para actualizar a lo que se le va a hacer commit)</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git restore &lt;archivo&gt;...&quot; para descartar los cambios en el directorio de trabajo)</span>
+<span class="go">    borrados:        src/txt/c.txt</span>
+<span class="go">    modificados:     src/txt/java.txt</span>
+
+<span class="go">Archivos sin seguimiento:</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git add &lt;archivo&gt;...&quot; para incluirlo a lo que se será confirmado)</span>
+<span class="go">    src/txt/python.txt</span>
 
 <span class="go">sin cambios agregados al commit (usa &quot;git add&quot; y/o &quot;git commit -a&quot;)</span>
 </pre></div>
 </div>
-<p>Como ves nos indica que se ha borrado el fichero <code class="file docutils literal notranslate"><span class="pre">src/txt/java.txt</span></code> pero este cambio no tiene seguimiento en Git todavía. Tienes que hacer un <strong class="command">git add</strong> o <strong class="command">git rm</strong> como sigue:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git rm src/txt/java.txt
-</pre></div>
-</div>
-<p>Ahora sí, si ejecutas de nuevo el <strong class="command">git status</strong> verás que el fichero <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code> ha sido eliminado del repositorio de Git.</p>
-<p>Finalmente, ya sabes, tienes que confirmar el cambio con un <em>commit</em>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git commit -m <span class="s2">&quot;Elimando el fichero java.txt.&quot;</span>
-</pre></div>
-</div>
+<p>Como ves, aparecen <strong>cambios no rastreados</strong> y <strong>archivos sin seguimiento</strong>. ¿Qué diferencia hay?</p>
+<ul class="simple">
+<li><p>Los cambios <strong>no rastreados</strong> son cambios sobre ficheros que ya existían en el último <em>commit</em> que no están en el área de preparación o <em>stage</em>.</p></li>
+<li><p>Los archivos <strong>sin seguimiento</strong> son archivos que no están en el último <em>commit</em> (son nuevos) y que no se han añadido al área de preparación o <em>stage</em>.</p></li>
+</ul>
+<p>En general hay tres cambios:</p>
+<ul class="simple">
+<li><p>Eliminado el fichero <code class="file docutils literal notranslate"><span class="pre">src/txt/c.txt</span></code>,</p></li>
+<li><p>Modificado el fichero <code class="file docutils literal notranslate"><span class="pre">src/txt/java.txt</span></code> y</p></li>
+<li><p>Nuevo fichero <code class="file docutils literal notranslate"><span class="pre">src/txt/python.txt</span></code>.</p></li>
+</ul>
+<p>De momento, estos cambios no están preparados para el siguiente <em>commit</em>, es decir, no están en el stado <em>stage</em>.</p>
 </section>
-<section id="paso-2-volver-atras-a-un-commit">
-<h2>Paso 2: volver atrás, a un commit<a class="headerlink" href="#paso-2-volver-atras-a-un-commit" title="Enlazar permanentemente con este título">#</a></h2>
-<p>Si ejecutas el comando <strong class="command">log</strong> de Git verás el siguiente histórico de <em>commits</em>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 3e38219ddfdb09abd0a03a9d0e63eb24390a0e00 (HEAD -&gt; main)</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 19:01:36 2022 +0200</span>
-
-<span class="go">    Elimando el fichero java.txt.</span>
-
-<span class="go">commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:08:44 2022 +0200</span>
-
-<span class="go">    Añadidos ficheros de texto con información sobre C y Java.</span>
-
-<span class="go">commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:02:36 2022 +0200</span>
-
-<span class="go">    Logotipos de Java añadidos al proyecto.</span>
-
-<span class="go">commit c7afc494c637463732d56711e9cc0da5bd274127</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Thu Sep 22 17:44:35 2022 +0200</span>
-
-<span class="go">    He añadido un fichero README a mi proyecto.</span>
+<section id="paso-4-preparar-siguiente-commit">
+<h2>Paso 4: preparar siguiente commit<a class="headerlink" href="#paso-4-preparar-siguiente-commit" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Vamos a preparar el siguiente <em>commit</em> (instantánea) con todos los cambios realizados. Para ello, hay que añadir todos los cambios anteriores al área de preparación o <em>stage</em>. ¿Cómo? con el comando <strong class="command">git add</strong> como ves a continuación:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git add src/txt/c.txt src/txt/java.txt src/txt/python.txt
 </pre></div>
 </div>
-<p>Imagina que quieres volver al commit <strong>ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5</strong>, es decir, al punto en el que tenías el fichero <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code> en el repositorio, porque te has arrepentido y quieres recuperar dicho fichero.</p>
-<p>Existen dos posibilidades:</p>
-<section id="primera-opcion">
-<h3>Primera opción:<a class="headerlink" href="#primera-opcion" title="Enlazar permanentemente con este título">#</a></h3>
-<p>Si solo quieres recuperar el fichero borrado bastaría con ejecutar el comando:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git checkout ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5 .
+<p>Ahora, si ejecutas el comando <strong class="command">git status</strong> verás la siguiente información:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">En la rama main</span>
+<span class="go">Cambios a ser confirmados:</span>
+<span class="gp gp-VirtualEnv">(usa &quot;git restore --staged &lt;archivo&gt;...&quot; para sacar del área de stage)</span>
+<span class="go">    borrados:        src/txt/c.txt</span>
+<span class="go">    modificados:     src/txt/java.txt</span>
+<span class="go">    nuevos archivos: src/txt/python.txt</span>
 </pre></div>
 </div>
-<p>No olvides el punto final.</p>
-<p>Y, por último, tienes que realizar un commit con la opción <strong>-a</strong> para añadir los nuevos ficheros (el eliminado):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git commit -am <span class="s2">&quot;Restaurado desde el commit.&quot;</span>
-</pre></div>
-</div>
-<p>Si haces un <strong class="command">git log</strong> verás que hay un nuevo commit, el que acabamos de crear:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 5b2d351658c4b47c874400c0332f35edd186cbf3 (HEAD -&gt; main)</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 19:15:53 2022 +0200</span>
-
-<span class="go">    Restaurado desde el commit.</span>
-
-<span class="go">commit 3e38219ddfdb09abd0a03a9d0e63eb24390a0e00</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 19:01:36 2022 +0200</span>
-
-<span class="go">    Elimando el fichero java.txt.</span>
-
-<span class="go">commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:08:44 2022 +0200</span>
-
-<span class="go">    Añadidos ficheros de texto con información sobre C y Java.</span>
-
-<span class="go">commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:02:36 2022 +0200</span>
-
-<span class="go">    Logotipos de Java añadidos al proyecto.</span>
-
-<span class="go">commit c7afc494c637463732d56711e9cc0da5bd274127</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Thu Sep 22 17:44:35 2022 +0200</span>
-
-<span class="go">    He añadido un fichero README a mi proyecto.</span>
-</pre></div>
-</div>
+<p>Como ves, ahora sí están preparados todos los cambios para realizar el <em>commit</em>, es decir, la instantánea.</p>
 </section>
-<section id="segunda-opcion">
-<h3>Segunda opción:<a class="headerlink" href="#segunda-opcion" title="Enlazar permanentemente con este título">#</a></h3>
-<p>En este caso sería la mejor opción de todas. Hacer un <strong>hard reset</strong> al commit al que quieres volver.</p>
-<p>Recordemos el historial desde el que partimos:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 3e38219ddfdb09abd0a03a9d0e63eb24390a0e00 (HEAD -&gt; main)</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 19:01:36 2022 +0200</span>
-
-<span class="go">    Elimando el fichero java.txt.</span>
-
-<span class="go">commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:08:44 2022 +0200</span>
-
-<span class="go">    Añadidos ficheros de texto con información sobre C y Java.</span>
-
-<span class="go">commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:02:36 2022 +0200</span>
-
-<span class="go">    Logotipos de Java añadidos al proyecto.</span>
-
-<span class="go">commit c7afc494c637463732d56711e9cc0da5bd274127</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Thu Sep 22 17:44:35 2022 +0200</span>
-
-<span class="go">    He añadido un fichero README a mi proyecto.</span>
-</pre></div>
-</div>
-<p>Queremos volver al <em>commit</em> identificado por <strong>ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5</strong>. Pues bien, para volver a él, basta con ejecutar el siguiente comando:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>git reset --hard ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5
-</pre></div>
-</div>
-<p>Por último, si haces un <strong class="command">git log</strong> para ver el historial, lo que vas a ver es que hemos vuelto al commit anterior, deshaciendo todo lo hecho en el último commit, en el que borramos el fichero <code class="file docutils literal notranslate"><span class="pre">java.txt</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit ccfa4ff42ec4682d0d352d92c1065c01e9ffd0b5 (HEAD -&gt; main)</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:08:44 2022 +0200</span>
-
-<span class="go">    Añadidos ficheros de texto con información sobre C y Java.</span>
-
-<span class="go">commit 8c307e2f754dc2861bbc5632b501c8badc2dbcad</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Sun Sep 25 18:02:36 2022 +0200</span>
-
-<span class="go">    Logotipos de Java añadidos al proyecto.</span>
-
-<span class="go">commit c7afc494c637463732d56711e9cc0da5bd274127</span>
-<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
-<span class="go">Date:   Thu Sep 22 17:44:35 2022 +0200</span>
-
-<span class="go">    He añadido un fichero README a mi proyecto.</span>
-</pre></div>
-</div>
+<section id="paso-5-hacer-el-commit">
+<h2>Paso 5: hacer el commit<a class="headerlink" href="#paso-5-hacer-el-commit" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Realiza el <em>commit</em> añadiendo el siguiente mensaje: <cite>Quitado C, añadido Python y ampliado Java.</cite></p>
 </section>
+<section id="paso-6-revisa-el-historial">
+<h2>Paso 6: revisa el historial<a class="headerlink" href="#paso-6-revisa-el-historial" title="Enlazar permanentemente con este título">#</a></h2>
+<p>Si echas un vistazo al historial deberías ver los siguientes <em>commits</em>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">commit 8f8b69a5856e9ddbb3e4ab7aca24aec5bef1be27 (HEAD -&gt; main)</span>
+<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
+<span class="go">Date:   Thu Oct 27 15:13:02 2022 +0200</span>
+
+<span class="go">    Quitado C, añadido Python y ampliado Java.</span>
+
+<span class="go">commit c0841983944a4fd9edfc0f6316af76e84327c7f6</span>
+<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
+<span class="go">Date:   Thu Oct 13 13:40:34 2022 +0200</span>
+
+<span class="go">    Añadidos ficheros de texto con información sobre C y Java.</span>
+
+<span class="go">commit 4cd4a901e559b54ff2953296a71a75570bb8cae2</span>
+<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
+<span class="go">Date:   Thu Oct 13 13:39:28 2022 +0200</span>
+
+<span class="go">    Logotipos de Java añadidos al proyecto.</span>
+
+<span class="go">commit c7afc494c637463732d56711e9cc0da5bd274127</span>
+<span class="go">Author: Román Martínez &lt;rgmf@riseup.net&gt;</span>
+<span class="go">Date:   Thu Sep 22 17:44:35 2022 +0200</span>
+
+<span class="go">    He añadido un fichero README a mi proyecto.</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -363,7 +317,15 @@
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="git_commit_ammend.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Deshacer cosas</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="git_local_entrenamiento2.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -407,12 +369,13 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Práctica entrenamiento 3: Git en local</a><ul>
-<li><a class="reference internal" href="#paso-1-eliminar-fichero">Paso 1: eliminar fichero</a></li>
-<li><a class="reference internal" href="#paso-2-volver-atras-a-un-commit">Paso 2: volver atrás, a un commit</a><ul>
-<li><a class="reference internal" href="#primera-opcion">Primera opción:</a></li>
-<li><a class="reference internal" href="#segunda-opcion">Segunda opción:</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#paso-1-modificaciones-en-el-repositorio">Paso 1: modificaciones en el repositorio</a></li>
+<li><a class="reference internal" href="#paso-2-eliminar-fichero">Paso 2: eliminar fichero</a></li>
+<li><a class="reference internal" href="#paso-3-anadir-un-nuevo-fichero">Paso 3: añadir un nuevo fichero</a></li>
+<li><a class="reference internal" href="#paso-3-ver-estado">Paso 3: ver estado</a></li>
+<li><a class="reference internal" href="#paso-4-preparar-siguiente-commit">Paso 4: preparar siguiente commit</a></li>
+<li><a class="reference internal" href="#paso-5-hacer-el-commit">Paso 5: hacer el commit</a></li>
+<li><a class="reference internal" href="#paso-6-revisa-el-historial">Paso 6: revisa el historial</a></li>
 </ul>
 </li>
 </ul>
